@@ -1,0 +1,3 @@
+[submodule "src/features/modules"]
+	path = src/features/modules
+	url = git@github.com:byinit/next-modules.git

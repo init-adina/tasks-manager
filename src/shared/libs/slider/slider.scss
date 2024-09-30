@@ -1,0 +1,67 @@
+@import "nouislider/dist/nouislider.css";
+@import "/src/shared/scss/main.scss";
+
+$slider-height: 5px;
+
+/* stylelint-disable selector-class-pattern */
+
+.slider-custom {
+  box-shadow: none;
+  border: none;
+
+  &.noUi-horizontal {
+    height: $slider-height;
+  }
+
+  &.noUi-vertical {
+    width: $slider-height;
+  }
+
+  .noUi-target {
+    background: #a8a9aa; // Background of the slider
+    border-radius: 999px; // Rounded corners
+    height: $slider-height;
+  }
+
+  .noUi-base {
+    border-radius: 999px; // Rounded corners for the slider base
+    height: $slider-height;
+  }
+
+  .noUi-connect {
+    background: $primary; // Customize the color of the connection bar
+    height: $slider-height;
+  }
+
+  .noUi-handle {
+    width: calc($slider-height + 10px);
+    height: calc($slider-height + 10px);
+    background: $primary; // Customize the color of the handles
+    border-radius: 50%; // Make the handles circular
+    transition: all 200ms ease;
+    box-shadow: none;
+    border: none;
+    cursor: pointer;
+
+    &:active {
+      scale: 130%;
+    }
+
+    &::before,
+    &::after {
+      display: none;
+    }
+
+    &.noUi-handle-upper {
+      right: -5px;
+    }
+
+    &.noUi-handle-lower {
+      right: -5px;
+    }
+  }
+
+  .noUi-touch-area {
+    outline: none;
+  }
+}

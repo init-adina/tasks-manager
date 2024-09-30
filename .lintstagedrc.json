@@ -1,0 +1,7 @@
+{
+  "*.scss": ["npm run lint:css"],
+  "*.{js,jsx,ts,tsx}": [
+    "npx eslint --max-warnings=0 . --ignore-pattern 'src/features/modules/*'"
+  ],
+  "*.{js,jsx,ts,tsx,html,css,scss}": ["npm run format"]
+}

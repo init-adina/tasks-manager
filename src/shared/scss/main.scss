@@ -1,0 +1,25 @@
+@import "./fancybox.scss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$primary: #000;
+
+* {
+  // font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+}
+
+input {
+  /* Скрывает стрелки для Chrome, Safari, Edge, Opera */
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Скрывает стрелки для Firefox */
+  &[type="number"] {
+    -moz-appearance: textfield;
+  }
+}

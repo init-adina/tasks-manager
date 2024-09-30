@@ -1,0 +1,7 @@
+@import "~@fancyapps/ui/dist/fancybox/fancybox.css";
+
+.fancybox {
+  &__backdrop {
+    background: rgba(0, 0, 0, 70%);
+  }
+}
