@@ -5,18 +5,19 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 import Navbar from "./Navbar";
-import Input from "@shared/ui/input/Input";
-import SearchIcon from "@mui/icons-material/Search";
+import Link from "next/link";
 
 function HeaderDesc() {
   return (
-    <div className="header-desc hidden lg:block border-b">
+    <div className="header-desc fixed top-0 left-0 w-full bg-white z-10 shadow-md hidden lg:block border-b">
       <Container>
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center gap-28">
-            <div className="logo text-primary-300">
-              <FitbitIcon className="size-10" />
-            </div>
+            <Link href="/">
+              <div className="logo text-primary-200">
+                <FitbitIcon className="size-10" />
+              </div>
+            </Link>
 
             <Navbar />
           </div>
@@ -33,8 +34,8 @@ function HeaderDesc() {
 
           <div className="btns flex items-center gap-8">
             <div className="gap-4 flex items-center">
-              <SettingsIcon className="size-5 cursor-pointer hover:text-primary-400" />
-              <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-400" />
+              <SettingsIcon className="size-5 cursor-pointer hover:text-primary-300" />
+              <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-300" />
             </div>
             <div className="profile size-10 cursor-pointer flex gap-1 items-center">
               <ProgressiveImage

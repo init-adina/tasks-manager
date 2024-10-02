@@ -1,8 +1,8 @@
 import { LinearProgress } from "@mui/material";
-import { IProjectItem } from "./ProjectItemsList";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import AddIcon from "@mui/icons-material/Add";
+import { IProjectItem } from "@shared/types/IProjectItem";
 
 function ProjectItem({
   title,
@@ -13,7 +13,7 @@ function ProjectItem({
   team,
 }: IProjectItem) {
   return (
-    <div className="project-item p-6 shadow-xl border flex flex-col gap-6 rounded-3xl h-80 odd:bg-primary-100">
+    <div className="project-item  p-6 shadow-xl border flex flex-col gap-6 rounded-3xl h-80 odd:bg-primary-100">
       <div className="time flex justify-between">
         <div className="created-day text-sm font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
