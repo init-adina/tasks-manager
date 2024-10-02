@@ -4,6 +4,9 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
+import Navbar from "./Navbar";
+import Input from "@shared/ui/input/Input";
+import SearchIcon from "@mui/icons-material/Search";
 
 function HeaderDesc() {
   return (
@@ -15,28 +18,24 @@ function HeaderDesc() {
               <FitbitIcon className="size-10" />
             </div>
 
-            <nav>
-              <ul className="flex gap-8 items-center">
-                <li className="cursor-pointer hover:text-primary-400">
-                  All Tasks
-                </li>
-                <li className="cursor-pointer hover:text-primary-400">Team</li>
-                <li className="cursor-pointer hover:text-primary-400">
-                  Company
-                </li>
-                <li className="cursor-pointer hover:text-primary-400">
-                  My Tasks
-                </li>
-              </ul>
-            </nav>
+            <Navbar />
           </div>
+          {/* 
+          <div className="search flex border w-96 rounded-lg bg-white items-center">
+            <Input
+              className="border-none bg-transparent w-full rounded py-3 px-4"
+              placeholder="Search"
+            />
+            <div className="search-icon py-3 group px-4 cursor-pointer flex items-center justify-center h-full">
+              <SearchIcon className="h-full group-hover:text-primary-400 size-6" />
+            </div>
+          </div> */}
 
           <div className="btns flex items-center gap-8">
             <div className="gap-4 flex items-center">
               <SettingsIcon className="size-5 cursor-pointer hover:text-primary-400" />
               <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-400" />
             </div>
-
             <div className="profile size-10 cursor-pointer flex gap-1 items-center">
               <ProgressiveImage
                 src="/assets/img/people/me.jpg"

@@ -116,13 +116,6 @@ const projectItems: IProjectItem[] = [
   },
 ];
 
-const colorSchemes = [
-  { bgColor: "bg-red-500", textColor: "text-white" },
-  { bgColor: "bg-blue-500", textColor: "text-white" },
-  { bgColor: "bg-green-500", textColor: "text-white" },
-  { bgColor: "bg-yellow-400", textColor: "text-black" },
-];
-
 function ProjectItemsList() {
   return (
     <div className="project-items-list grid grid-cols-4 gap-8 xl:py-20 py-12">
