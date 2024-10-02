@@ -8,6 +8,12 @@ const config: Config = {
   ],
 
   theme: {
+    container: {
+      padding: {
+        DEFAULT: "1rem",
+        lg: "3rem",
+      },
+    },
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -15,7 +21,7 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        "test-color": generateHSLColors(0, 0),
+        primary: generateHSLColors(227, 100),
       },
     },
   },

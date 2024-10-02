@@ -1,9 +1,10 @@
-import Input from "@shared/ui/input/Input";
+import Container from "@shared/ui/Container";
+import ProjectItemsList from "@widgets/project/ProjectItemsList";
 
 export default function Home() {
   return (
-    <h2>
-      <Input />
-    </h2>
+    <Container>
+      <ProjectItemsList />
+    </Container>
   );
 }
