@@ -3,6 +3,7 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
+import SearchIcons from "@mui/icons-material/Search";
 
 function HeaderDesc() {
   return (
