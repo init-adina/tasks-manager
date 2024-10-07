@@ -2,7 +2,7 @@ import { ITaskItem } from "@shared/types/ITaskItem";
 
 function TaskItem({ count, icon, title }: ITaskItem) {
   return (
-    <div className="task-item cursor-pointer first:bg-primary-100 rounded-lg p-4 border  flex flex-col gap-4">
+    <div className="task-item cursor-pointer first:bg-primary-200 rounded-lg p-4 border  flex flex-col gap-4">
       <div className="size-10 rounded-full border  bg-white flex items-center justify-center">
         {icon}
       </div>

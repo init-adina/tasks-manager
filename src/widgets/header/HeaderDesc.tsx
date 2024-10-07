@@ -1,43 +1,29 @@
 import Container from "@shared/ui/Container";
-import FitbitIcon from "@mui/icons-material/Fitbit";
-import SettingsIcon from "@mui/icons-material/Settings";
 import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsActiveOutlined";
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
-import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
-import Navbar from "./Navbar";
-import Link from "next/link";
+import Input from "@shared/ui/input/Input";
+import SearchIcon from "@mui/icons-material/Search";
 
 function HeaderDesc() {
   return (
-    <div className="header-desc fixed top-0 left-0 w-full bg-white z-10 shadow-md hidden lg:block border-b">
+    <div className="header-desc shadow-md hidden lg:block border-b">
       <Container>
         <div className="flex justify-between items-center py-4">
-          <div className="flex items-center gap-28">
-            <Link href="/">
-              <div className="logo text-primary-200">
-                <FitbitIcon className="size-10" />
-              </div>
-            </Link>
-
-            <Navbar />
-          </div>
-          {/* 
-          <div className="search flex border w-96 rounded-lg bg-white items-center">
+          <div className="search flex border w-[30rem] rounded-lg bg-white items-center">
             <Input
               className="border-none bg-transparent w-full rounded py-3 px-4"
-              placeholder="Search"
+              placeholder="Search here"
             />
             <div className="search-icon py-3 group px-4 cursor-pointer flex items-center justify-center h-full">
               <SearchIcon className="h-full group-hover:text-primary-400 size-6" />
             </div>
-          </div> */}
+          </div>
 
           <div className="btns flex items-center gap-8">
             <div className="gap-4 flex items-center">
-              <SettingsIcon className="size-5 cursor-pointer hover:text-primary-300" />
               <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-300" />
             </div>
-            <div className="profile size-10 cursor-pointer flex gap-1 items-center">
+            <div className="profile size-10 cursor-pointer shrink-0">
               <ProgressiveImage
                 src="/assets/img/people/me.jpg"
                 alt="profile-image"
@@ -45,7 +31,6 @@ function HeaderDesc() {
                 width={100}
                 height={100}
               />
-              <KeyboardArrowDownOutlinedIcon className="" />
             </div>
           </div>
         </div>

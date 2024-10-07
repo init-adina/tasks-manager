@@ -33,7 +33,7 @@ function TasksList() {
   return (
     <section className="tasks-list">
       <Container>
-        <div className="grid grid-cols-4 gap-8 xl:pt-32 pt-12">
+        <div className="grid grid-cols-4 gap-8 xl:pt-32 pt-12 ">
           {taskItems.map((taskItem, index) => (
             <TaskItem
               key={index}

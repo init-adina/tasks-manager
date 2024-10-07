@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "@shared/scss/main.scss";
 import Header from "@widgets/header/Header";
-import Footer from "@widgets/footer/Footer";
+import SideBar from "@widgets/sidebar/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,9 +20,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Header />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <div className="flex ">
+          <SideBar />
+          <div className="ml-56">
+            <Header />
+            <main className="min-h-screen">{children}</main>
+          </div>
+        </div>
       </body>
     </html>
   );
