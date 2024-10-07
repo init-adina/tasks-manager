@@ -13,7 +13,7 @@ function ProjectItem({
   team,
 }: IProjectItem) {
   return (
-    <div className="project-item  p-6 shadow-xl border flex flex-col gap-6 rounded-3xl h-80 odd:bg-primary-100">
+    <div className="project-item  p-6  shadow-md border flex flex-col gap-6 rounded-3xl h-80 odd:bg-primary-400 odd:text-white ">
       <div className="time flex justify-between">
         <div className="created-day text-sm font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
@@ -70,7 +70,7 @@ function ProjectItem({
           </div>
         ))}
 
-        <div className="left-time bg-white text-sm font-medium rounded-3xl border px-6 py-2 text-nowrap">
+        <div className="left-time bg-white text-sm text-black font-medium rounded-3xl border border-gray-400 px-6 py-2 text-nowrap">
           {leftTime} left
         </div>
       </div>

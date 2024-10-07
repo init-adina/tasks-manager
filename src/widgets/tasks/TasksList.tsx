@@ -5,6 +5,7 @@ import DoneIcon from "@mui/icons-material/Done";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import Container from "@shared/ui/Container";
+import Headline from "@shared/ui/Headline";
 
 export const taskItems: ITaskItem[] = [
   {
@@ -33,13 +34,16 @@ function TasksList() {
   return (
     <section className="tasks-list">
       <Container>
-        <div className="grid grid-cols-4 gap-8 xl:pt-32 pt-12 ">
-          {taskItems.map((taskItem, index) => (
-            <TaskItem
-              key={index}
-              {...taskItem}
-            />
-          ))}
+        <div className="wrapper pt-12 flex flex-col gap-8">
+          <Headline>Projects</Headline>
+          <div className="grid grid-cols-4 gap-8 ">
+            {taskItems.map((taskItem, index) => (
+              <TaskItem
+                key={index}
+                {...taskItem}
+              />
+            ))}
+          </div>
         </div>
       </Container>
     </section>

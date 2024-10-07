@@ -17,7 +17,9 @@ const textSizes = {
 
 function Headline({ className, size = "md", children }: HeadlineProps) {
   return (
-    <div className={cn("headline", className, textSizes[size])}>{children}</div>
+    <div className={cn("headline font-semibold", className, textSizes[size])}>
+      {children}
+    </div>
   );
 }
 
