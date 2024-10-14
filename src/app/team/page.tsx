@@ -1,11 +1,12 @@
-import TasksList from "@widgets/tasks/TasksList";
+import TasksList from "@widgets/main/tasks/TasksList";
+import TeamList from "@widgets/team/TeamList";
 
 function Team() {
   return (
-    <div>
+    <>
       <TasksList />
-      team page
-    </div>
+      <TeamList />
+    </>
   );
 }
 

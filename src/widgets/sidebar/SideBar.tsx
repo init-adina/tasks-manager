@@ -11,7 +11,7 @@ import Link from "next/link";
 function SideBar() {
   return (
     <aside className="sidebar">
-      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-56 h-screen bg-primary-400 pt-6 text-white">
+      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-56 h-screen  pt-6 border-r text-white bg-primary-400">
         <Link href="/">
           <Headline className="font-bold">Company</Headline>
         </Link>
@@ -19,20 +19,26 @@ function SideBar() {
         <div className="main-menu flex flex-col gap-6 text-sm font-medium">
           <div className="menu-title uppercase ">main menu</div>
           <div className="pl-4 flex flex-col gap-6">
-            <div className="menu-item flex hover:text-primary-100 cursor-pointer w-fit items-center gap-2">
+            <Link
+              href="/"
+              className="menu-item flex hover:text-primary-100 cursor-pointer w-fit items-center gap-2"
+            >
               <HomeIcon className="size-6" />
               <div>Home</div>
-            </div>
+            </Link>
 
             <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
               <TaskIcon className="size-6" />
               <div>All Tasks</div>
             </div>
 
-            <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
+            <Link
+              href="/team"
+              className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit"
+            >
               <GroupIcon className="size-6" />
               <div>Team</div>
-            </div>
+            </Link>
 
             <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
               <ListAltIcon className="size-6" />

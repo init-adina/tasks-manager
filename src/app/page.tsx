@@ -1,7 +1,5 @@
-import Container from "@shared/ui/Container";
-import ProjectItemsList from "@widgets/project/ProjectItemsList";
-import TasksList from "@widgets/tasks/TasksList";
-import TaskListTwo from "@widgets/tasks/TasksListTwo";
+import ProjectItemsList from "@widgets/main/project/ProjectItemsList";
+import TasksList from "@widgets/main/tasks/TasksList";
 
 export default function Home() {
   return (
