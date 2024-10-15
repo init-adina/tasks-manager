@@ -13,7 +13,7 @@ function ProjectItem({
   team,
 }: IProjectItem) {
   return (
-    <div className="project-item  p-6  shadow-md border flex flex-col gap-6 rounded-3xl h-80 odd:bg-primary-400 odd:text-white ">
+    <div className="project-item p-6 shadow-md border flex flex-col gap-6 rounded-3xl h-80 bg-white odd:bg-primary-500/85 odd:text-white ">
       <div className="time flex justify-between">
         <div className="created-day text-sm font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />

@@ -3,6 +3,8 @@ import NotificationsActiveOutlinedIcon from "@mui/icons-material/NotificationsAc
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
 
 function HeaderDesc() {
   return (
@@ -20,16 +22,33 @@ function HeaderDesc() {
           </div>
 
           <div className="btns flex items-center gap-4">
-            <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-300" />
+            <div className="notification relative size-10 shadow-md rounded-full border flex items-center justify-center">
+              <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-300" />
 
-            <div className="profile size-10 cursor-pointer shrink-0">
-              <ProgressiveImage
-                src="/assets/img/people/me.jpg"
-                alt="profile-image"
-                className="size-full object-cover rounded-full shrink-0"
-                width={100}
-                height={100}
-              />
+              <div className="absolute size-5 flex items-center justify-center border bg-red-500 text-white rounded-full -top-1 -right-2">
+                <PriorityHighIcon className="size-3" />
+              </div>
+            </div>
+
+            <div className="profile cursor-pointer w-fit border flex items-center gap-2 rounded-3xl px-2 py-1">
+              <div className="profile-img size-10 shrink-0">
+                <ProgressiveImage
+                  src="/assets/img/people/me.jpg"
+                  alt="profile-image"
+                  className="size-full object-cover rounded-full shrink-0"
+                  width={100}
+                  height={100}
+                />
+              </div>
+
+              <div className="flex flex-col  text-xs">
+                <div className="text-nowrap font-semibold">
+                  Adina Meiramkhanova
+                </div>
+                <div className="text-gray-600">@adinamei</div>
+              </div>
+
+              <ExpandMoreOutlinedIcon className="size-6 text-gray-600" />
             </div>
           </div>
         </div>

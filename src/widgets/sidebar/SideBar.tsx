@@ -7,14 +7,24 @@ import ListAltIcon from "@mui/icons-material/ListAlt";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Link from "next/link";
+import BubbleChartOutlinedIcon from "@mui/icons-material/BubbleChartOutlined";
+import ViewSidebarOutlinedIcon from "@mui/icons-material/ViewSidebarOutlined";
 
 function SideBar() {
   return (
     <aside className="sidebar">
-      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-56 h-screen  pt-6 border-r text-white bg-primary-400">
-        <Link href="/">
-          <Headline className="font-bold">Company</Headline>
-        </Link>
+      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-60 h-screen pt-6 border-r shadow-md text-white bg-primary-500/85">
+        <div className="flex justify-between items-center">
+          <Link
+            href="/"
+            className="flex items-center gap-2 "
+          >
+            <BubbleChartOutlinedIcon className="size-8" />
+            <Headline className="font-bold">PTrack</Headline>
+          </Link>
+
+          <ViewSidebarOutlinedIcon className="size-6 " />
+        </div>
 
         <div className="main-menu flex flex-col gap-6 text-sm font-medium">
           <div className="menu-title uppercase ">main menu</div>
@@ -40,10 +50,13 @@ function SideBar() {
               <div>Team</div>
             </Link>
 
-            <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
+            <Link
+              href="my-tasks"
+              className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit"
+            >
               <ListAltIcon className="size-6" />
               <div>My Tasks</div>
-            </div>
+            </Link>
           </div>
         </div>
 

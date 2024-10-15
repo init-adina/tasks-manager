@@ -22,8 +22,7 @@ const themes = {
     "bg-white hover:border-white border border-transparent hover:bg-transparent hover:text-white hover:fill-white",
   secondary:
     "bg-custom-black text-white border hover:bg-custom hover:text-custom-black border-custom-black",
-  outlined:
-    "bg-custom border border-custom-black hover:bg-custom-black hover:text-white",
+  outlined: "border-white hover:bg-white hover:text-black border text-white",
   transparent: "bg-white/20 text-white",
 };
 
@@ -37,7 +36,7 @@ function Button({
   return (
     <button
       className={cn(
-        "flex transition-all gap-2 w-fit rounded-full text-custom-black outline-none",
+        "flex transition-all duration-300 gap-2 w-fit rounded-full font-medium outline-none",
         sizes[size],
         themes[theme],
         className
