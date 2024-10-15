@@ -1,5 +1,5 @@
-import ProjectItemsList from "@widgets/main/project/ProjectItemsList";
-import TasksList from "@widgets/main/tasks/TasksList";
+import ProjectItemsList from "@widgets/home/project/ProjectItemsList";
+import TasksList from "@widgets/home/tasks/TasksList";
 
 export default function Home() {
   return (

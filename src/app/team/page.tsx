@@ -1,4 +1,4 @@
-import TasksList from "@widgets/main/tasks/TasksList";
+import TasksList from "@widgets/home/tasks/TasksList";
 import TeamList from "@widgets/team/TeamList";
 
 function Team() {
