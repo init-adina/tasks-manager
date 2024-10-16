@@ -13,7 +13,7 @@ import ViewSidebarOutlinedIcon from "@mui/icons-material/ViewSidebarOutlined";
 function SideBar() {
   return (
     <aside className="sidebar">
-      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-60 h-screen pt-6 border-r shadow-md text-white bg-primary-500/85">
+      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-60 h-screen pt-6 border-r shadow-md text-white bg-primary-500/80">
         <div className="flex justify-between items-center">
           <Link
             href="/"
@@ -51,6 +51,14 @@ function SideBar() {
             </Link>
 
             <Link
+              href="/people"
+              className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit"
+            >
+              <GroupIcon className="size-6" />
+              <div>People</div>
+            </Link>
+
+            <Link
               href="my-tasks"
               className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit"
             >
@@ -64,10 +72,13 @@ function SideBar() {
           <div className="setting-title uppercase">Setting</div>
 
           <div className="pl-4 flex flex-col gap-6">
-            <div className="setting-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
+            <Link
+              href="/portfolio"
+              className="setting-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit"
+            >
               <AccountCircleIcon className="size-6" />
               <div className="title">Portfolio</div>
-            </div>
+            </Link>
 
             <div className="setting-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
               <SettingsIcon className="size-6" />

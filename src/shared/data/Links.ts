@@ -10,6 +10,10 @@ export const links: ILinks[] = [
     title: "Team",
   },
   {
+    href: "/people",
+    title: "People",
+  },
+  {
     href: "#",
     title: "Company",
   },

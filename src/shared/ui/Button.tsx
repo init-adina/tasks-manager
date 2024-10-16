@@ -12,7 +12,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 const sizes = {
   none: "",
   md: "px-4 py-2",
-  lg: "px-12 py-5 ",
+  lg: "px-10 py-3",
   sm: "px-2 py-1 leading-none",
 };
 
@@ -21,7 +21,7 @@ const themes = {
   primary:
     "bg-white hover:border-white border border-transparent hover:bg-transparent hover:text-white hover:fill-white",
   secondary:
-    "bg-custom-black text-white border hover:bg-custom hover:text-custom-black border-custom-black",
+    "text-white bg-primary-400 border hover:bg-white hover:border-primary-400 hover:text-primary-400",
   outlined: "border-white hover:bg-white hover:text-black border text-white",
   transparent: "bg-white/20 text-white",
 };
