@@ -1,6 +1,5 @@
 import Headline from "@shared/ui/Headline";
 import HomeIcon from "@mui/icons-material/Home";
-import TaskIcon from "@mui/icons-material/Task";
 import GroupIcon from "@mui/icons-material/Group";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import ListAltIcon from "@mui/icons-material/ListAlt";
@@ -37,10 +36,10 @@ function SideBar() {
               <div>Home</div>
             </Link>
 
-            <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
+            {/* <div className="menu-item flex items-center gap-2 hover:text-primary-100 cursor-pointer w-fit">
               <TaskIcon className="size-6" />
               <div>All Tasks</div>
-            </div>
+            </div> */}
 
             <Link
               href="/team"
