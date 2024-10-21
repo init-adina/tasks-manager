@@ -34,8 +34,11 @@ function ProgressRightInner() {
       <SwiperNext
         spaceBetween={20}
         perView="auto"
-        slides={projects.map((project) => (
-          <div className="swiper-slide shrink-0">
+        slides={projects.map((project, index) => (
+          <div
+            className="swiper-slide shrink-0"
+            key={index}
+          >
             <ProjectCard {...project} />
           </div>
         ))}

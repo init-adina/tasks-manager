@@ -12,8 +12,8 @@ import ViewSidebarOutlinedIcon from "@mui/icons-material/ViewSidebarOutlined";
 
 function SideBar() {
   return (
-    <aside className="sidebar">
-      <div className="flex flex-col gap-12 fixed top-0 z-10 px-4 left-0 w-60 h-screen pt-6 border-r shadow-md text-white bg-primary-500/80">
+    <aside className="sidebar hidden lg:flex">
+      <div className="flex flex-col gap-12 fixed bottom-0 top-0 z-10 px-4 left-0 w-60 pt-6 border-r shadow-md text-white bg-primary-500/80">
         <div className="flex justify-between items-center">
           <Link
             href="/"

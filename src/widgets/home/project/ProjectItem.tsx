@@ -13,7 +13,7 @@ function ProjectItem({
   team,
 }: IProjectItem) {
   return (
-    <div className="project-item p-6 shadow-md border flex flex-col gap-6 rounded-3xl h-80 bg-white odd:bg-primary-500/85 odd:text-white ">
+    <div className="project-item p-6 shadow-md border flex flex-col gap-6 rounded-xl h-80 bg-white odd:bg-primary-500/85 odd:text-white ">
       <div className="time flex justify-between">
         <div className="created-day text-sm font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
@@ -36,7 +36,10 @@ function ProjectItem({
 
       <div className="team-lefttime flex items-center justify-between">
         {team.map((teamPerson, index) => (
-          <div className="flex items-center gap-2">
+          <div
+            key={index}
+            className="flex items-center gap-2"
+          >
             <div className="flex items-center">
               <div
                 key={index}

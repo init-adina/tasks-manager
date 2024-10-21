@@ -8,9 +8,9 @@ import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
 
 function HeaderDesc() {
   return (
-    <div className="header-desc shadow-md hidden lg:block border-b">
+    <div className="header-desc shadow-md  border-b">
       <Container>
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-4 gap-4">
           <div className="search flex border-2 w-[30rem] rounded-lg bg-white items-center">
             <Input
               className="border-none bg-transparent w-full rounded py-3 px-4"
@@ -41,7 +41,7 @@ function HeaderDesc() {
                 />
               </div>
 
-              <div className="flex flex-col  text-xs">
+              <div className="hidden lg:flex flex-col text-xs">
                 <div className="text-nowrap font-semibold">
                   Adina Meiramkhanova
                 </div>
