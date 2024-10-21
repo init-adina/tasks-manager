@@ -57,7 +57,7 @@ function PeopleItemsWrapper() {
   return (
     <section className="people-items-wrapper">
       <Container>
-        <div className="pb-12 grid grid-cols-4 gap-8">
+        <div className="pb-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {people.map((person, index) => (
             <PersonCard
               key={index}

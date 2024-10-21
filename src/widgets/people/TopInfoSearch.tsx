@@ -12,9 +12,9 @@ function TopInfoSearch() {
           <div className="flex flex-col gap-4">
             <Headline>People</Headline>
 
-            <div className="w-full flex justify-end relative">
+            <div className="w-full lg:flex lg:justify-end relative">
               <Input
-                className="border w-1/4 bg-slate-100 text-sm px-4 py-3 "
+                className="border lg:w-1/4 bg-slate-100 text-sm px-4 py-3 "
                 placeholder="Search by name"
               />
 
