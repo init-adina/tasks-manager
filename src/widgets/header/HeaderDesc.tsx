@@ -23,10 +23,13 @@ function HeaderDesc() {
 
           <div className="btns flex items-center gap-4">
             <div className="notification relative size-10 shadow-md rounded-full border flex items-center justify-center">
-              <NotificationsActiveOutlinedIcon className="size-5 cursor-pointer hover:text-primary-300" />
+              <NotificationsActiveOutlinedIcon
+                className="cursor-pointer hover:text-primary-300"
+                sx={{ width: "20px", height: "20px" }}
+              />
 
               <div className="absolute size-5 flex items-center justify-center border bg-red-500 text-white rounded-full -top-1 -right-2">
-                <PriorityHighIcon className="size-3" />
+                <PriorityHighIcon sx={{ width: "12px", height: "12px" }} />
               </div>
             </div>
 
