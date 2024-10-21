@@ -9,7 +9,7 @@ function MyTasksList() {
       <Container>
         <div className="pb-12 flex flex-col gap-4">
           <Headline>My Tasks</Headline>
-          <div className="grid grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8 ">
             {projectItems.map((projectItem, index) => (
               <ProjectItem
                 key={index}

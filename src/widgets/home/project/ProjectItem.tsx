@@ -41,10 +41,7 @@ function ProjectItem({
             className="flex items-center gap-2"
           >
             <div className="flex items-center">
-              <div
-                key={index}
-                className="person-one size-10"
-              >
+              <div className="person-one size-10">
                 <ProgressiveImage
                   src={teamPerson.personImage}
                   alt="person"
