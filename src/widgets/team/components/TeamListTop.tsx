@@ -1,6 +1,6 @@
 function TeamListTop() {
   return (
-    <div className="top-team-list text-gray-500 text-sm font-medium grid grid-cols-7 border-b">
+    <div className="top-team-list text-gray-500 text-sm font-medium hidden lg:grid grid-cols-7 border-b">
       <div className="designer-wrapper col-span-2 py-2 px-4 border-r">Name</div>
 
       <div className="task col-span-2 py-2 px-4 border-r">Projects</div>
