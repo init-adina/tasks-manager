@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "@shared/scss/main.scss";
 import Header from "@widgets/header/Header";
-import SideBar from "@widgets/sidebar/SideBar";
-
 import FooterMobile from "@widgets/footer/components/FooterMobile";
 import QueryProvider from "src/core/providers/query/QueryProvider";
 import TasksServerProvider from "src/core/providers/users/TasksServerProvider";
@@ -26,16 +24,12 @@ export default function RootLayout({
       <QueryProvider>
         <TasksServerProvider>
           <body className={inter.className}>
-            <div className="lg:flex relative">
-              <SideBar />
+            {/* <SideBar /> */}
 
-              <div className="lg:ml-60 lg:flex-1 pb-16 lg:pb-0">
-                <Header />
-                <main className="min-h-screen">{children}</main>
-              </div>
+            <Header />
+            <main className="min-h-screen">{children}</main>
 
-              <FooterMobile />
-            </div>
+            <FooterMobile />
           </body>
         </TasksServerProvider>
       </QueryProvider>
