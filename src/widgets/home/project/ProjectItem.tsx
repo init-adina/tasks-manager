@@ -1,77 +1,45 @@
 import { LinearProgress } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
-import AddIcon from "@mui/icons-material/Add";
-import { IProjectItem } from "@shared/types/IProjectItem";
+import { TasksItem } from "src/entities/users/tasks";
 
 function ProjectItem({
-  title,
-  project,
-  progress,
   createdDay,
-  leftTime,
-  team,
-}: IProjectItem) {
+  name,
+  appType,
+  progress,
+  leftDay,
+}: TasksItem) {
   return (
-    <div className="project-item p-6 shadow-md border flex flex-col gap-6 rounded-xl h-80 bg-white odd:bg-primary-500/85 odd:text-white ">
+    <div className="project-item p-6 shadow-md text-sm border flex flex-col gap-2 rounded-xl bg-white even:bg-primary-400/85 even:text-white">
       <div className="time flex justify-between">
-        <div className="created-day text-sm font-medium">{createdDay}</div>
+        <div className="created-day font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
       </div>
 
       <div className="title-type flex flex-col items-center gap-2">
-        <div className="title text-lg font-bold"> {title}</div>
-        <div className="project-type flex justify-center">{project}</div>
+        <div className="title text-lg font-bold"> {name}</div>
+        <div className="project-type flex justify-center">{appType}</div>
       </div>
 
       <div className="progress-bar w-full flex flex-col gap-2">
-        <div className="font-bold">Progress</div>
+        <div className="progress flex items-center justify-between">
+          <div className="font-medium">Progress</div>
+
+          <span>{progress} %</span>
+        </div>
+
         <LinearProgress
           variant="determinate"
           value={progress}
           className="h-2 rounded-md"
         />
-        <div className="progress flex justify-end font-bold">{progress} %</div>
       </div>
 
-      <div className="team-lefttime flex items-center justify-between">
-        {team.map((teamPerson, index) => (
-          <div
-            key={index}
-            className="flex items-center gap-2"
-          >
-            <div className="flex items-center">
-              <div className="person-one size-10">
-                <ProgressiveImage
-                  src={teamPerson.personImage}
-                  alt="person"
-                  className="rounded-full size-full object-cover"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div
-                key={index}
-                className="person-two size-10"
-              >
-                <ProgressiveImage
-                  src={teamPerson.anotherPersonImage}
-                  alt="person"
-                  className="rounded-full size-full object-cover"
-                  width={100}
-                  height={100}
-                />
-              </div>
-            </div>
+      <div className="left-day flex justify-end pt-4">
+        <div className="w-fit py-2 font-medium shadow rounded-full px-4 border">
+          <span>Days left: </span>
 
-            <div className="other-people cursor-pointer flex justify-center items-center border size-10 rounded-full">
-              <AddIcon className="size-6" />
-            </div>
-          </div>
-        ))}
-
-        <div className="left-time bg-white text-sm text-black font-medium rounded-3xl border border-gray-400 px-6 py-2 text-nowrap">
-          {leftTime} left
+          <span>{leftDay}</span>
         </div>
       </div>
     </div>

@@ -1,10 +1,14 @@
-import { projectItems } from "@shared/data/ProjectItemData";
+"use client";
+
 import ProjectItem from "./ProjectItem";
 import Container from "@shared/ui/Container";
 import Headline from "@shared/ui/Headline";
 import SwiperNext from "@shared/libs/swiper/SwiperNext";
+import { useTasks } from "src/core/providers/users/TasksClientProvider";
 
 function ProjectItemsList() {
+  const { data: tasks } = useTasks();
+
   return (
     <section className="project-items-list ">
       <div className="wrapper py-12">
@@ -25,22 +29,22 @@ function ProjectItemsList() {
                     },
                   },
                 }}
-                slides={projectItems.map((projectItem, index) => (
+                slides={tasks.map((task, index) => (
                   <div
                     key={index}
                     className="swiper-slide shrink-0"
                   >
-                    <ProjectItem {...projectItem} />
+                    <ProjectItem {...task} />
                   </div>
                 ))}
               />
             </div>
 
             <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 ">
-              {projectItems.map((projectItem, index) => (
+              {tasks.map((task) => (
                 <ProjectItem
-                  key={index}
-                  {...projectItem}
+                  key={task.id}
+                  {...task}
                 />
               ))}
             </div>

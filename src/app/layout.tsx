@@ -7,6 +7,7 @@ import SideBar from "@widgets/sidebar/SideBar";
 
 import FooterMobile from "@widgets/footer/components/FooterMobile";
 import QueryProvider from "src/core/providers/query/QueryProvider";
+import TasksServerProvider from "src/core/providers/users/TasksServerProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,18 +24,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryProvider>
-        <body className={inter.className}>
-          <div className="lg:flex relative">
-            <SideBar />
+        <TasksServerProvider>
+          <body className={inter.className}>
+            <div className="lg:flex relative">
+              <SideBar />
 
-            <div className="lg:ml-60 lg:flex-1 pb-16 lg:pb-0">
-              <Header />
-              <main className="min-h-screen">{children}</main>
+              <div className="lg:ml-60 lg:flex-1 pb-16 lg:pb-0">
+                <Header />
+                <main className="min-h-screen">{children}</main>
+              </div>
+
+              <FooterMobile />
             </div>
-
-            <FooterMobile />
-          </div>
-        </body>
+          </body>
+        </TasksServerProvider>
       </QueryProvider>
     </html>
   );

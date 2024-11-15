@@ -1,3 +1,5 @@
+"use client";
+
 import Container from "@shared/ui/Container";
 import PersonCard from "./PersonCard";
 import Button from "@shared/ui/Button";
@@ -54,6 +56,8 @@ const people = [
 ];
 
 function PeopleItemsWrapper() {
+  // const { data: people } = useUsers();
+
   return (
     <section className="people-items-wrapper">
       <Container>
