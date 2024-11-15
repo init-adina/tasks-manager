@@ -11,7 +11,7 @@ function ProjectItemsList() {
 
   return (
     <section className="project-items-list ">
-      <div className="wrapper py-12">
+      <div className="wrapper py-8">
         <Container className="flex flex-col gap-8">
           <Headline>Recent Projects</Headline>
 
