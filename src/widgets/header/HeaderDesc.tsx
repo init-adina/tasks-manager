@@ -43,8 +43,12 @@ function HeaderDesc() {
               </li>
 
               <li className="hover:text-primary-300">
-                <Link href="/my-tasks">My Tasks</Link>
+                <Link href="/blogNo task">Blog</Link>
               </li>
+
+              {/* <li className="hover:text-primary-300">
+                <Link href="/my-tasks">My Tasks</Link>
+              </li> */}
 
               <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>

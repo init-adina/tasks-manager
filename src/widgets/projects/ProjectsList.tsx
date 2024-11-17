@@ -51,7 +51,7 @@ function ProjectsList() {
               <div className="flex items-center">
                 {project.tasks.length > 0
                   ? project.tasks.map((task) => task.title).join(", ")
-                  : "No tasks"}
+                  : "no tasks"}
               </div>
             </div>
 
