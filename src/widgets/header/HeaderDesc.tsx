@@ -30,12 +30,12 @@ function HeaderDesc() {
 
           <nav className="nav">
             <ul className="flex items-center gap-8 justify-between text-nowrap">
-              <li className="hover:text-primary-300">
+              {/* <li className="hover:text-primary-300">
                 <Link href="/team">Team</Link>
-              </li>
+              </li> */}
 
               <li className="hover:text-primary-300">
-                <Link href="/people">Blog</Link>
+                <Link href="/people">People</Link>
               </li>
 
               <li className="hover:text-primary-300">
