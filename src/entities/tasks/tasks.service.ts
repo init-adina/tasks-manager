@@ -1,7 +1,7 @@
 import axios from "axios";
 import { TasksItem } from "./tasks";
 
-class UsersService {
+class TasksService {
   async getUsers(): Promise<TasksItem[]> {
     try {
       const res = await axios.get<TasksItem[]>(
@@ -15,4 +15,4 @@ class UsersService {
   }
 }
 
-export const usersService = new UsersService();
+export const usersService = new TasksService();

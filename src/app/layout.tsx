@@ -5,7 +5,8 @@ import "@shared/scss/main.scss";
 import Header from "@widgets/header/Header";
 import FooterMobile from "@widgets/footer/components/FooterMobile";
 import QueryProvider from "src/core/providers/query/QueryProvider";
-import TasksServerProvider from "src/core/providers/users/TasksServerProvider";
+import TasksServerProvider from "src/core/providers/tasks/TasksServerProvider";
+import TeamsServerProvider from "src/core/providers/teams/TeamsServerProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,16 +23,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryProvider>
-        <TasksServerProvider>
-          <body className={inter.className}>
-            {/* <SideBar /> */}
+        <TeamsServerProvider>
+          <TasksServerProvider>
+            <body className={inter.className}>
+              {/* <SideBar /> */}
 
-            <Header />
-            <main className="min-h-screen">{children}</main>
+              <Header />
+              <main className="min-h-screen">{children}</main>
 
-            <FooterMobile />
-          </body>
-        </TasksServerProvider>
+              <FooterMobile />
+            </body>
+          </TasksServerProvider>
+        </TeamsServerProvider>
       </QueryProvider>
     </html>
   );

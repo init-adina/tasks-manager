@@ -1,3 +1,5 @@
+"use client";
+
 import TopInfoSearch from "@widgets/people/TopInfoSearch";
 import ChooseFiltersWrapper from "@widgets/people/components/ChooseFiltersWrapper";
 import PeopleItemsWrapper from "@widgets/people/components/PeopleItemsWrapper";

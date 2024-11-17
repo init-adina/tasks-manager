@@ -4,7 +4,7 @@ import ProjectItem from "./ProjectItem";
 import Container from "@shared/ui/Container";
 import Headline from "@shared/ui/Headline";
 import SwiperNext from "@shared/libs/swiper/SwiperNext";
-import { useTasks } from "src/core/providers/users/TasksClientProvider";
+import { useTasks } from "src/core/providers/tasks/TasksClientProvider";
 
 function ProjectItemsList() {
   const { data: tasks } = useTasks();

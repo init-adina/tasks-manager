@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { usersService } from "src/entities/users/tasks.service";
+import { usersService } from "src/entities/tasks/tasks.service";
 import { TasksClientProvider } from "./TasksClientProvider";
 
 async function TasksServerProvider({ children }: { children: ReactNode }) {

@@ -1,6 +1,6 @@
 import { LinearProgress } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { TasksItem } from "src/entities/users/tasks";
+import { TasksItem } from "src/entities/tasks/tasks";
 
 function ProjectItem({
   createdDay,

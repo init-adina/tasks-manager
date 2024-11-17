@@ -1,7 +1,7 @@
 "use client";
 
 import { createContext, ReactNode, useContext } from "react";
-import { TasksItem } from "src/entities/users/tasks";
+import { TasksItem } from "src/entities/tasks/tasks";
 
 interface TasksContextProps {
   data: TasksItem[];
