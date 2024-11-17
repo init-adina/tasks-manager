@@ -6,7 +6,7 @@ function ProgressSection() {
   return (
     <section className="progress-section">
       <Container>
-        <div className="py-12 flex flex-col gap-4">
+        <div className="py-8 flex flex-col gap-4">
           <Headline>My progress</Headline>
 
           <ProgressInfoWrapper />

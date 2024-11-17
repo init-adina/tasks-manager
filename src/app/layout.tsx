@@ -3,10 +3,10 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "@shared/scss/main.scss";
 import Header from "@widgets/header/Header";
-import FooterMobile from "@widgets/footer/components/FooterMobile";
 import QueryProvider from "src/core/providers/query/QueryProvider";
 import TasksServerProvider from "src/core/providers/tasks/TasksServerProvider";
 import TeamsServerProvider from "src/core/providers/teams/TeamsServerProvider";
+import ProjectsServerProvider from "src/core/providers/projects/ProjectsServerProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,16 +24,14 @@ export default function RootLayout({
     <html lang="en">
       <QueryProvider>
         <TeamsServerProvider>
-          <TasksServerProvider>
-            <body className={inter.className}>
-              {/* <SideBar /> */}
-
-              <Header />
-              <main className="min-h-screen">{children}</main>
-
-              <FooterMobile />
-            </body>
-          </TasksServerProvider>
+          <ProjectsServerProvider>
+            <TasksServerProvider>
+              <body className={inter.className}>
+                <Header />
+                <main className="min-h-screen">{children}</main>
+              </body>
+            </TasksServerProvider>
+          </ProjectsServerProvider>
         </TeamsServerProvider>
       </QueryProvider>
     </html>

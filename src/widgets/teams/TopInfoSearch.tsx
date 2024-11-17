@@ -10,7 +10,7 @@ function TopInfoSearch() {
       <div>
         <Container>
           <div className="flex flex-col gap-4">
-            <Headline>People</Headline>
+            <Headline>Teams</Headline>
 
             <div className="w-full lg:flex lg:justify-end relative">
               <Input

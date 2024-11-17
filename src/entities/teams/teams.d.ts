@@ -15,14 +15,14 @@ export interface TeamItem extends Timestamps {
   projects: ProjectItem[];
 }
 
-export interface PositionItem extends Timestamps {
+interface PositionItem extends Timestamps {
   id: number;
   name: string;
   description: string;
   slug: string;
 }
 
-export interface ProjectItem extends Timestamps, Pivot {
+interface ProjectItem extends Timestamps, Pivot {
   id: string;
   name: string;
   description: string | null;

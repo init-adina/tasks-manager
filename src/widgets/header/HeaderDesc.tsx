@@ -35,11 +35,11 @@ function HeaderDesc() {
               </li> */}
 
               <li className="hover:text-primary-300">
-                <Link href="/people">People</Link>
+                <Link href="/teams">Teams</Link>
               </li>
 
               <li className="hover:text-primary-300">
-                <Link href="">All Projects</Link>
+                <Link href="/projects">Projects</Link>
               </li>
 
               <li className="hover:text-primary-300">

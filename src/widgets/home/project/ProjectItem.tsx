@@ -11,7 +11,7 @@ function ProjectItem({
 }: TasksItem) {
   return (
     <div className="project-item p-6 shadow-md text-sm border flex flex-col gap-2 rounded-md bg-white even:bg-primary-300 even:text-white">
-      <div className="time flex justify-between">
+      <div className="time flex items-center justify-between">
         <div className="created-day font-medium">{createdDay}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
       </div>
