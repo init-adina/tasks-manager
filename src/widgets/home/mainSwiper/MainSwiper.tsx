@@ -25,7 +25,7 @@ function MainSwiper() {
   return (
     <section className="main-swiper">
       <Container>
-        <div className="py-8">
+        <div>
           <SwiperNext
             options={{
               autoplay: {

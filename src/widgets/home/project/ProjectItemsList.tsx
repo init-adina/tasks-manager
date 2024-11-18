@@ -6,8 +6,6 @@ import SwiperNext from "@shared/libs/swiper/SwiperNext";
 import { useTasks } from "src/core/providers/tasks/TasksClientProvider";
 import { useProjects } from "src/core/providers/projects/ProjectsClientProvider";
 import Project from "./Project";
-import Button from "@shared/ui/Button";
-import Link from "next/link";
 
 function ProjectItemsList() {
   const { data: tasks } = useTasks();
@@ -18,7 +16,7 @@ function ProjectItemsList() {
 
   return (
     <section className="project-items-list ">
-      <div className="wrapper py-8">
+      <div className="wrapper">
         <Container className="flex flex-col gap-8">
           <Headline>Recent Projects</Headline>
 
@@ -56,7 +54,7 @@ function ProjectItemsList() {
               ))}
             </div>
 
-            <Link
+            {/* <Link
               href="/projects"
               className="flex justify-center"
             >
@@ -67,7 +65,7 @@ function ProjectItemsList() {
               >
                 See All
               </Button>
-            </Link>
+            </Link> */}
           </div>
         </Container>
       </div>
