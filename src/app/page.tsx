@@ -1,3 +1,4 @@
+import Clients from "@widgets/home/clients/Clients";
 import CompanyInfo from "@widgets/home/companyInfo/CompanyInfo";
 import MainSwiper from "@widgets/home/mainSwiper/MainSwiper";
 import ProjectItemsList from "@widgets/home/project/ProjectItemsList";
@@ -9,6 +10,7 @@ export default function Home() {
       <MainSwiper />
       <TasksList />
       <ProjectItemsList />
+      <Clients />
       <CompanyInfo />
     </div>
   );
