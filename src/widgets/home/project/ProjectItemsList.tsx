@@ -6,11 +6,15 @@ import SwiperNext from "@shared/libs/swiper/SwiperNext";
 import { useTasks } from "src/core/providers/tasks/TasksClientProvider";
 import { useProjects } from "src/core/providers/projects/ProjectsClientProvider";
 import Project from "./Project";
+import Button from "@shared/ui/Button";
+import Link from "next/link";
 
 function ProjectItemsList() {
   const { data: tasks } = useTasks();
 
   const { data: projects } = useProjects();
+
+  const limitedProjects = projects.slice(0, 4);
 
   return (
     <section className="project-items-list ">
@@ -18,7 +22,7 @@ function ProjectItemsList() {
         <Container className="flex flex-col gap-8">
           <Headline>Recent Projects</Headline>
 
-          <div className="projects-wrapper overflow-hidden rounded-xl">
+          <div className="projects-wrapper overflow-hidden flex flex-col gap-8 rounded-xl">
             <div className="lg:hidden">
               <SwiperNext
                 spaceBetween={20}
@@ -44,13 +48,26 @@ function ProjectItemsList() {
             </div>
 
             <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {projects.map((project) => (
+              {limitedProjects.map((project) => (
                 <Project
                   key={project.id}
                   {...project}
                 />
               ))}
             </div>
+
+            <Link
+              href="/projects"
+              className="flex justify-center"
+            >
+              <Button
+                theme="secondary"
+                size="none"
+                className="px-8 py-3 capitalize"
+              >
+                See All
+              </Button>
+            </Link>
           </div>
         </Container>
       </div>
