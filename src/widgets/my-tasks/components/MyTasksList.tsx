@@ -1,7 +1,7 @@
 import { projectItems } from "@shared/data/ProjectItemData";
 import Container from "@shared/ui/Container";
 import Headline from "@shared/ui/Headline";
-import ProjectItem from "@widgets/home/project/ProjectItem";
+import ProjectItem from "@widgets/home/project/Project";
 
 function MyTasksList() {
   return (
