@@ -17,6 +17,7 @@
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@fancyapps/ui": "^5.0.36",
+    "@hookform/resolvers": "^3.9.1",
     "@maskito/core": "^3.0.0",
     "@maskito/kit": "^3.0.0",
     "@maskito/react": "^3.0.0",
@@ -37,8 +38,10 @@
     "react-dom": "^18",
     "react-hook-form": "^7.53.0",
     "react-intersection-observer": "^9.13.0",
+    "react-toastify": "^10.0.6",
     "swiper": "^11.1.8",
-    "tailwind-merge": "^2.4.0"
+    "tailwind-merge": "^2.4.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.4.0",

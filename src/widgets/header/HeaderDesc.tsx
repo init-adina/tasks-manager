@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function HeaderDesc() {
   return (
-    <div className="header-desc border-b ">
+    <div className="header-desc border-b">
       <Container>
         <div className="flex justify-between items-center py-4 gap-4">
           <Link
@@ -43,29 +43,14 @@ function HeaderDesc() {
               </li>
 
               <li className="hover:text-primary-300">
-                <Link href="/about">About</Link>
-              </li>
-              <li className="hover:text-primary-300">
                 <Link href="/blog">Blog</Link>
               </li>
 
               {/* <li className="hover:text-primary-300">
-                <Link href="/my-tasks">My Tasks</Link>
-              </li> */}
-
-              <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>
-              </li>
+              </li> */}
             </ul>
           </nav>
-
-          {/* <div className="btns flex items-center gap-4">
-            <div className="logout cursor-pointer w-fit border flex items-center gap-2 rounded-lg py-2 px-4">
-              <div>User Name</div>
-
-              <LogoutIcon sx={{ width: "20px", height: "20px" }} />
-            </div>
-          </div> */}
 
           <Link
             href="/login"

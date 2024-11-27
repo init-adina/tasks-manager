@@ -7,6 +7,7 @@ import QueryProvider from "src/core/providers/query/QueryProvider";
 import TasksServerProvider from "src/core/providers/tasks/TasksServerProvider";
 import TeamsServerProvider from "src/core/providers/teams/TeamsServerProvider";
 import ProjectsServerProvider from "src/core/providers/projects/ProjectsServerProvider";
+import Toast from "@shared/ui/core/toast/Toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
           <ProjectsServerProvider>
             <TasksServerProvider>
               <body className={inter.className}>
+                <Toast />
                 <Header />
                 <main className="min-h-screen">{children}</main>
               </body>
