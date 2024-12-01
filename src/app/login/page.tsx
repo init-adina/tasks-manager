@@ -8,9 +8,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginFormType, loginSchema } from "src/entities/auth/auth-schemas";
 import { authService } from "src/entities/auth/auth.service";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 function Login() {
   const isLoading = false;
+  const router = useRouter();
 
   const {
     register,
@@ -24,11 +27,17 @@ function Login() {
     //TODO Send data to backend within auth service end handle errors
     const res = await authService.login(data);
 
+    if (res?.token) {
+      Cookies.set("token", res.token, { expires: 7 });
+      console.log("Token saved!");
+
+      router.push("/portfolio");
+    }
     console.log(res);
   });
 
   return (
-    <section>
+    <div className="login flex items-center min-h-screen">
       <Container>
         <form
           onSubmit={onSubmit}
@@ -66,7 +75,7 @@ function Login() {
           </div>
         </form>
       </Container>
-    </section>
+    </div>
   );
 }
 

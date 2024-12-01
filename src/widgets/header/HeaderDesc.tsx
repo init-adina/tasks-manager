@@ -1,10 +1,28 @@
+"use client";
+
 import Container from "@shared/ui/Container";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
 import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import Link from "next/link";
+import { useAuth } from "src/core/providers/AuthProvider";
+import { authService } from "src/entities/auth/auth.service";
+import { useRouter } from "next/navigation";
 
 function HeaderDesc() {
+  const { user, refetchUser } = useAuth();
+
+  const router = useRouter();
+
+  const handleLogout = async () => {
+    try {
+      await authService.logout();
+      await refetchUser(); // Обновить пользователя в контексте
+      router.push("/login");
+    } catch (error) {
+      console.error("Logout failed", error);
+    }
+  };
   return (
     <div className="header-desc border-b">
       <Container>
@@ -42,9 +60,9 @@ function HeaderDesc() {
                 <Link href="/projects">Projects</Link>
               </li>
 
-              <li className="hover:text-primary-300">
+              {/* <li className="hover:text-primary-300">
                 <Link href="/blog">Blog</Link>
-              </li>
+              </li> */}
 
               {/* <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>
@@ -52,12 +70,21 @@ function HeaderDesc() {
             </ul>
           </nav>
 
-          <Link
-            href="/login"
-            className="hover:text-primary-300"
-          >
-            <div>Login</div>
-          </Link>
+          {user ? (
+            <button
+              onClick={handleLogout}
+              className="hover:text-primary-300"
+            >
+              Logout
+            </button>
+          ) : (
+            <Link
+              href="/login"
+              className="hover:text-primary-300"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </Container>
     </div>

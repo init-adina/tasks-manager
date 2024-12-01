@@ -1,13 +1,25 @@
-import WithAuth from "@shared/hoc/WithAuth";
-import PortfolioTop from "@widgets/portfolio/PortfolioTop";
+"use client";
+
+import { useAuth } from "src/core/providers/AuthProvider";
 
 function Portfolio() {
+  const { user, loading, refetchUser } = useAuth();
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!user) {
+    return <div>No user data available</div>;
+  }
+
   return (
-    <WithAuth>
-      <div className="py-12 flex flex-col gap-8">
-        <PortfolioTop />
-      </div>
-    </WithAuth>
+    <div>
+      <h1>{user.name}</h1>
+      <p>Email: {user.email}</p>
+      <p>Position: {user.position?.name}</p>
+      <button onClick={refetchUser}>Refresh Data</button>
+    </div>
   );
 }
 
