@@ -1,24 +1,48 @@
-import Container from "@shared/ui/Container";
-import Navbar from "@widgets/header/Navbar";
-import FitbitIcon from "@mui/icons-material/Fitbit";
+"use client";
+
+import { useAuth } from "src/core/providers/AuthProvider";
+import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import Link from "next/link";
-import CopyrightIcon from "@mui/icons-material/Copyright";
+import Container from "@shared/ui/Container";
 
 function Footer() {
-  return (
-    <footer>
-      <Container>
-        <div className="flex justify-between items-center py-8 border-t">
-          <Link href="/">
-            <div className="logo text-primary-200">
-              <FitbitIcon className="size-10" />
-            </div>
-          </Link>
-          <Navbar />
+  const { user } = useAuth();
 
-          <div className="text flex items-center gap-1">
-            <CopyrightIcon />
-            <div>All right reserved</div>
+  if (!user) {
+    return null;
+  }
+
+  return (
+    <footer className="py-3 border-t">
+      <Container>
+        <div className="wrapper flex justify-between items-center">
+          <Link
+            href="/"
+            className="logo text-primary-400 flex flex-col items-center gap-1 animate-pulse"
+          >
+            <FlutterDashIcon sx={{ width: "40px", height: "40px" }} />
+
+            <span className="text-xs font-medium uppercase">The Logo</span>
+          </Link>
+
+          <nav className="nav ">
+            <ul className="flex items-center gap-12 justify-between text-gray-500">
+              <li className="hover:text-primary-300">
+                <Link href="/teams">Teams</Link>
+              </li>
+
+              <li className="hover:text-primary-300">
+                <Link href="/projects">Projects</Link>
+              </li>
+
+              <li className="hover:text-primary-300">
+                <Link href="/portfolio">Portfolio</Link>
+              </li>
+            </ul>
+          </nav>
+
+          <div className="policy hover:text-primary-300 text-gray-500">
+            <Link href="/">Privacy Policy</Link>
           </div>
         </div>
       </Container>

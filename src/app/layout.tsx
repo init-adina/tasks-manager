@@ -9,6 +9,7 @@ import TeamsServerProvider from "src/core/providers/teams/TeamsServerProvider";
 import ProjectsServerProvider from "src/core/providers/projects/ProjectsServerProvider";
 import Toast from "@shared/ui/core/toast/Toast";
 import { AuthProvider } from "src/core/providers/AuthProvider";
+import Footer from "@widgets/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
                   <Toast />
                   <Header />
                   <main className="min-h-screen">{children}</main>
+                  <Footer />
                 </body>
               </TasksServerProvider>
             </ProjectsServerProvider>

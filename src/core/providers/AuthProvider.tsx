@@ -40,26 +40,6 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  // const [user, setUser] = useState<User | null>(null);
-  // const [loading, setLoading] = useState(true);
-
-  // const fetchUser = async () => {
-  //   setLoading(true);
-  //   try {
-  //     const fetchedUser = await authService.fetchUser();
-  //     setUser(fetchedUser);
-  //   } catch (error) {
-  //     console.error("Failed to fetch user:", error);
-  //     setUser(null);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   fetchUser();
-  // }, []);
-
   const {
     data: user,
     isLoading,
@@ -68,7 +48,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     queryKey: ["user"],
     initialData: null,
     queryFn: authService.fetchUser,
-    enabled: true, // Этот флаг позволяет запросу сразу сработать
+    enabled: true,
   });
 
   return (

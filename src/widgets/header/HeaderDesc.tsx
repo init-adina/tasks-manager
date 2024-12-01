@@ -49,10 +49,6 @@ function HeaderDesc() {
 
           <nav className="nav">
             <ul className="flex items-center gap-8 justify-between text-nowrap">
-              {/* <li className="hover:text-primary-300">
-                <Link href="/team">Team</Link>
-              </li> */}
-
               <li className="hover:text-primary-300">
                 <Link href="/teams">Teams</Link>
               </li>
@@ -61,13 +57,9 @@ function HeaderDesc() {
                 <Link href="/projects">Projects</Link>
               </li>
 
-              {/* <li className="hover:text-primary-300">
-                <Link href="/blog">Blog</Link>
-              </li> */}
-
-              {/* <li className="hover:text-primary-300">
+              <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>
-              </li> */}
+              </li>
             </ul>
           </nav>
 

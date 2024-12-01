@@ -4,7 +4,7 @@ import { useAuth } from "src/core/providers/AuthProvider";
 import HeaderDesc from "./HeaderDesc";
 
 function Header() {
-  const { user } = useAuth(); // Проверка состояния пользователя
+  const { user } = useAuth();
 
   if (!user) {
     return null; // Если пользователя нет, ничего не рендерим
