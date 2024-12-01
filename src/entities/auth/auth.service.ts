@@ -11,7 +11,6 @@ class AuthService {
       return response.data;
     } catch (error: any) {
       console.error("Login failed", error.response?.data || error.message);
-      throw new Error(error.response?.data.message || "Login failed");
     }
   }
 

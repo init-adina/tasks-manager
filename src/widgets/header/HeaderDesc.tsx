@@ -17,7 +17,8 @@ function HeaderDesc() {
   const handleLogout = async () => {
     try {
       await authService.logout();
-      await refetchUser(); // Обновить пользователя в контексте
+
+      refetchUser(); // Обновить пользователя в контексте
       router.push("/login");
     } catch (error) {
       console.error("Logout failed", error);

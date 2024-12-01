@@ -10,10 +10,12 @@ import { LoginFormType, loginSchema } from "src/entities/auth/auth-schemas";
 import { authService } from "src/entities/auth/auth.service";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
+import { useAuth } from "src/core/providers/AuthProvider";
 
 function Login() {
   const isLoading = false;
   const router = useRouter();
+  const { refetchUser } = useAuth();
 
   const {
     register,
@@ -31,6 +33,7 @@ function Login() {
       Cookies.set("token", res.token, { expires: 7 });
       console.log("Token saved!");
 
+      refetchUser();
       router.push("/portfolio");
     }
     console.log(res);

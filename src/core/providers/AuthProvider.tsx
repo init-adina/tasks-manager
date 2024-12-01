@@ -1,12 +1,7 @@
 "use client";
 
-import {
-  createContext,
-  ReactNode,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useQuery } from "@tanstack/react-query";
+import { createContext, ReactNode, useContext } from "react";
 import { authService } from "src/entities/auth/auth.service";
 
 interface Position {
@@ -45,28 +40,45 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [user, setUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState(true);
+  // const [user, setUser] = useState<User | null>(null);
+  // const [loading, setLoading] = useState(true);
 
-  const fetchUser = async () => {
-    setLoading(true);
-    try {
-      const fetchedUser = await authService.fetchUser();
-      setUser(fetchedUser);
-    } catch (error) {
-      console.error("Failed to fetch user:", error);
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchUser = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const fetchedUser = await authService.fetchUser();
+  //     setUser(fetchedUser);
+  //   } catch (error) {
+  //     console.error("Failed to fetch user:", error);
+  //     setUser(null);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchUser();
-  }, []);
+  // useEffect(() => {
+  //   fetchUser();
+  // }, []);
+
+  const {
+    data: user,
+    isLoading,
+    refetch,
+  } = useQuery<User | null>({
+    queryKey: ["user"],
+    initialData: null,
+    queryFn: authService.fetchUser,
+    enabled: true, // Этот флаг позволяет запросу сразу сработать
+  });
 
   return (
-    <AuthContext.Provider value={{ user, loading, refetchUser: fetchUser }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        loading: isLoading,
+        refetchUser: () => refetch().then(() => {}),
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
