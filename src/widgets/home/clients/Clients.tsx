@@ -26,8 +26,9 @@ function Clients() {
   return (
     <section className="clients">
       <Container>
-        <div className="wrapper flex flex-col py-8">
-          <Headline>Our Clients</Headline>
+        <div className="wrapper flex flex-col py-8 gap-4">
+          <Headline className="font-medium">Our Clients</Headline>
+
           <div className="relative">
             <SwiperNext
               spaceBetween={20}
