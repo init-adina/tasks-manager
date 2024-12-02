@@ -50,11 +50,11 @@ function Login() {
       <Container>
         <form
           onSubmit={onSubmit}
-          className="flex flex-col gap-4 text-sm max-w-xl mx-auto border p-16 backdrop-blur-sm bg-white/30 shadow"
+          className="flex flex-col gap-8 text-sm max-w-xl mx-auto border p-16 backdrop-blur-sm bg-white/30 shadow rounded-md"
         >
           <Headline
             size="none"
-            className="text-center text-4xl text-gray-800"
+            className="text-center text-3xl text-gray-800"
           >
             Login
           </Headline>
