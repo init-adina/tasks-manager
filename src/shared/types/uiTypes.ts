@@ -1,4 +1,4 @@
-export type size = "sm" | "md" | "lg" | "none" | "xs" | "xl";
+export type size = "sm" | "md" | "lg" | "none" | "xl";
 
 export type theme =
   | "primary"

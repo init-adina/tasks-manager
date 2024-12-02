@@ -2,12 +2,11 @@ import Container from "@shared/ui/Container";
 import Headline from "@shared/ui/Headline";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
-import FilterChoose from "./components/FilterChoose";
 
 function TopInfoSearch() {
   return (
     <section className="top-info-search">
-      <div>
+      <div className="pb-12">
         <Container>
           <div className="flex flex-col gap-4">
             <Headline>Teams</Headline>
@@ -23,7 +22,7 @@ function TopInfoSearch() {
               </div>
             </div>
 
-            <FilterChoose />
+            {/* <FilterChoose /> */}
           </div>
         </Container>
       </div>

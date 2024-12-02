@@ -46,19 +46,24 @@ function Login() {
   });
 
   return (
-    <div className="login flex items-center min-h-screen">
+    <div className="login flex items-center min-h-screen bg-gradient-to-tr from-primary-300/20 via-[#D8B5FF]/10 to-primary-100/20">
       <Container>
         <form
           onSubmit={onSubmit}
-          className="max-w-lg mx-auto flex flex-col gap-4 py-8 text-sm"
+          className="flex flex-col gap-4 text-sm max-w-xl mx-auto border p-16 backdrop-blur-sm bg-white/30 shadow"
         >
-          <Headline className="text-center">Login</Headline>
+          <Headline
+            size="none"
+            className="text-center text-4xl text-gray-800"
+          >
+            Login
+          </Headline>
 
           <div className="flex flex-col gap-4">
             <Input
               label="Email"
               type="email"
-              className="border"
+              className="border py-3"
               required
               {...register("email")}
               error={errors.email?.message}
@@ -67,7 +72,7 @@ function Login() {
             <Input
               label="Password"
               type="password"
-              className="border"
+              className="border py-3"
               required
               {...register("password")}
               error={errors.password?.message}

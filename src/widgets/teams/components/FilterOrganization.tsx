@@ -29,18 +29,18 @@ function FilterOrganization() {
       ref={dropdownRef}
     >
       <div
-        className="px-4 py-3  cursor-pointer bg-primary-50 text-sm w-fit text-primary-500 rounded-md flex gap-4 items-center font-medium"
+        className="px-4 py-3 cursor-pointer bg-primary-50 text-sm w-44 text-primary-500 rounded-md flex justify-between items-center font-medium"
         onClick={() => setIsOpen((prev) => !prev)}
       >
-        <div>Design Team</div>
+        <div>Position</div>
         <ArrowDropDownIcon className="size-5" />
       </div>
 
       {isOpen && (
-        <div className="border absolute top-[110%] w-full rounded-md px-4 py-3 text-sm flex flex-col gap-3 bg-white">
-          <div>Marketing Team</div>
-          <div>Social Team</div>
-          <div>Development Team</div>
+        <div className="border absolute top-[110%] w-full rounded-md text-sm flex flex-col gap-3 bg-white cursor-pointer">
+          <div className="border-b px-4 py-3">Designer</div>
+          <div className="border-b px-4 pb-3">Developer</div>
+          <div className="px-4 pb-3 ">Project Manager</div>
         </div>
       )}
     </div>

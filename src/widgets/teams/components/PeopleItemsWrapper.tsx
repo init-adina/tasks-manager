@@ -3,6 +3,7 @@
 import Container from "@shared/ui/Container";
 import Button from "@shared/ui/Button";
 import { useTeams } from "src/core/providers/teams/TeamsClientProvider";
+import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 
 // const people = [
 //   {
@@ -68,7 +69,14 @@ function PeopleItemsWrapper() {
               key={team.id}
             >
               <div className="person-infos px-6 pt-6 pb-3 flex flex-col items-center gap-3">
-                <div className="person-image size-40 bg-slate-200"></div>
+                <div className="person-image">
+                  <ProgressiveImage
+                    src={team.avatar || "/assets/no-avatar.webp"}
+                    width={160}
+                    height={160}
+                    alt="user-avatar"
+                  />
+                </div>
 
                 <div className="person-name font-medium"> {team.name}</div>
 
