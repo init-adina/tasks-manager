@@ -1,6 +1,6 @@
 import { LinearProgress } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { TaskItem, UsersItem } from "src/entities/projects/projects";
+import { ProjectItem } from "src/entities/projects/projects";
 
 function Project({
   start_date,
@@ -10,17 +10,9 @@ function Project({
   status,
   tasks,
   users,
-}: {
-  start_date: string;
-  name: string;
-  progress: number;
-  deadline: string;
-  status: string;
-  tasks: TaskItem[];
-  users: UsersItem[];
-}) {
+}: ProjectItem) {
   return (
-    <div className="project-item p-6 shadow-md text-sm border flex flex-col gap-2 rounded-md bg-white even:bg-primary-300 even:text-white">
+    <div className="project-item p-6 shadow-md text-sm border flex flex-col gap-2 rounded-md">
       <div className="time flex items-center justify-between">
         <div className="created-day font-medium">{start_date}</div>
         <MoreVertIcon className="size-6 cursor-pointer" />
@@ -58,7 +50,7 @@ function Project({
       </div>
 
       <div className="left-day flex justify-end">
-        <div className="w-fit py-2 font-medium shadow rounded-full px-4 border">
+        <div className="w-fit py-2 font-medium shadow-md rounded-full px-4 border">
           <span>{deadline}</span>
         </div>
       </div>

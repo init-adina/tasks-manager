@@ -32,10 +32,10 @@ export const taskItems: ITaskItem[] = [
 
 function TasksList() {
   return (
-    <section className="tasks-list">
+    <section className="tasks-list ">
       <Container>
-        <div className="wrapper flex flex-col gap-8">
-          <Headline>Projects Summary</Headline>
+        <div className="wrapper py-8 flex flex-col gap-8">
+          <Headline className="font-medium">Projects Summary</Headline>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {taskItems.map((taskItem, index) => (

@@ -26,7 +26,7 @@ function Clients() {
   return (
     <section className="clients">
       <Container>
-        <div className="wrapper flex flex-col ">
+        <div className="wrapper flex flex-col py-8">
           <Headline>Our Clients</Headline>
           <div className="relative">
             <SwiperNext

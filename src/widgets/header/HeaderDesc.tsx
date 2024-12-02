@@ -3,11 +3,11 @@
 import Container from "@shared/ui/Container";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
-import FlutterDashIcon from "@mui/icons-material/FlutterDash";
 import Link from "next/link";
 import { useAuth } from "src/core/providers/AuthProvider";
 import { authService } from "src/entities/auth/auth.service";
 import { useRouter } from "next/navigation";
+import LogoDevIcon from "@mui/icons-material/LogoDev";
 
 function HeaderDesc() {
   const { user, refetchUser } = useAuth();
@@ -25,14 +25,14 @@ function HeaderDesc() {
     }
   };
   return (
-    <div className="header-desc border-b">
+    <div className="header-desc border-b relative z-50 h-24 flex items-center">
       <Container>
-        <div className="flex justify-between items-center py-4 gap-4">
+        <div className="flex justify-between items-center">
           <Link
             href="/"
-            className="logo text-primary-400 flex flex-col items-center gap-1 animate-pulse"
+            className="logo text-primary-400 flex flex-col items-center gap-1"
           >
-            <FlutterDashIcon sx={{ width: "40px", height: "40px" }} />
+            <LogoDevIcon sx={{ width: "40px", height: "40px" }} />
 
             <span className="text-xs font-medium uppercase">The Logo</span>
           </Link>
@@ -49,7 +49,7 @@ function HeaderDesc() {
 
           <nav className="nav">
             <ul className="flex items-center gap-8 justify-between text-nowrap">
-              <li className="hover:text-primary-300">
+              <li className="hover:text-primary-400">
                 <Link href="/teams">Teams</Link>
               </li>
 
@@ -66,14 +66,14 @@ function HeaderDesc() {
           {user ? (
             <button
               onClick={handleLogout}
-              className="hover:text-primary-300"
+              className="hover:text-primary-400"
             >
               Logout
             </button>
           ) : (
             <Link
               href="/login"
-              className="hover:text-primary-300"
+              className="hover:text-primary-400"
             >
               Login
             </Link>
