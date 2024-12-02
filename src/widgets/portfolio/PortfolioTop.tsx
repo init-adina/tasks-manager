@@ -6,7 +6,7 @@ function PortfolioTop() {
   return (
     <section className="portfolio-top">
       <Container>
-        <div className="pb-12 grid grid-cols-1  md:grid-cols-5 xl:grid-cols-4 gap-4 ">
+        <div className="py-12 grid grid-cols-1  md:grid-cols-5 xl:grid-cols-4 gap-4 ">
           <div className="md:col-span-2 xl:col-span-1">
             <PortfolioSidebar />
           </div>
