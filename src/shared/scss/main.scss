@@ -10,6 +10,10 @@ $primary: #000;
   scroll-behavior: smooth;
 }
 
+.small-text {
+  @apply text-xs lg:text-sm;
+}
+
 input {
   /* Скрывает стрелки для Chrome, Safari, Edge, Opera */
   &::-webkit-outer-spin-button,

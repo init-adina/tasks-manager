@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { EffectCoverflow } from "swiper/modules";
 import "swiper/css";
 import CurvedSwiperCard from "./CurvedSwiperCard";
@@ -45,20 +44,18 @@ function CurwedSwiper({ workItems }: CurvedSwiperProps) {
         },
       }}
       slides={workItems.map((card) => (
-        <Link
-          href={card.url}
+        <div
           key={card.id}
-          className="swiper-slide shrink-0 w-1/4 block"
+          className="swiper-slide shrink-0"
         >
           <CurvedSwiperCard
             title={card.title}
-            companyName={card.companyName}
             siteType={card.siteType}
             srcUrl={card.srcUrl}
             bgColor={card.bgColor}
             info={card.info}
           />
-        </Link>
+        </div>
       ))}
     />
   );

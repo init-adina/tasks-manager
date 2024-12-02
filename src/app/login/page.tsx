@@ -21,6 +21,7 @@ function Login() {
     register,
     handleSubmit,
     formState: { errors },
+    setError,
   } = useForm<LoginFormType>({
     resolver: zodResolver(loginSchema),
   });
@@ -35,6 +36,11 @@ function Login() {
 
       refetchUser();
       router.push("/portfolio");
+    } else {
+      setError("root", {
+        type: "manual",
+        message: "Invalid email or password",
+      });
     }
     console.log(res);
   });
@@ -75,6 +81,10 @@ function Login() {
             >
               {isLoading ? "Loading..." : "Log in"}
             </Button>
+
+            {errors.root && (
+              <div className="text-red-500">{errors.root.message}</div>
+            )}
           </div>
         </form>
       </Container>

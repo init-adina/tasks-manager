@@ -10,16 +10,14 @@ interface HeadlineProps {
 
 const textSizes = {
   none: "",
-  sm: "text-xl",
+  sm: "text-base",
   md: "text-2xl",
   lg: "text-3xl md:text-4xl lg:text-5xl",
 };
 
 function Headline({ className, size = "md", children }: HeadlineProps) {
   return (
-    <div className={cn("headline font-semibold", className, textSizes[size])}>
-      {children}
-    </div>
+    <div className={cn("headline", className, textSizes[size])}>{children}</div>
   );
 }
 
