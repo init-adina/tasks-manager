@@ -49,11 +49,10 @@ function CurwedSwiper({ workItems }: CurvedSwiperProps) {
           className="swiper-slide shrink-0"
         >
           <CurvedSwiperCard
-            title={card.title}
             siteType={card.siteType}
-            srcUrl={card.srcUrl}
-            bgColor={card.bgColor}
-            info={card.info}
+            image={card.image}
+            company={card.company}
+            bgColor={card.bgColor ?? "bg-transparent"}
           />
         </div>
       ))}

@@ -1,9 +1,8 @@
 export interface IWorkItem {
   id?: number | string;
-  title: string;
+  url?: string;
   siteType: string;
-  srcUrl: string;
-  bgColor: string;
-  url: string;
-  info: string;
+  company: string;
+  image?: string;
+  bgColor?: string;
 }
