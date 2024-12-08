@@ -32,8 +32,10 @@ export default function RootLayout({
               <TasksServerProvider>
                 <body className={inter.className}>
                   <Toast />
-                  <Header />
-                  <main className="min-h-screen">{children}</main>
+                  <div className="min-h-screen">
+                    <Header />
+                    <main>{children}</main>
+                  </div>
                   <Footer />
                 </body>
               </TasksServerProvider>

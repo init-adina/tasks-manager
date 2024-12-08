@@ -1,7 +1,7 @@
 "use client";
 
 import { useAuth } from "src/core/providers/AuthProvider";
-import FlutterDashIcon from "@mui/icons-material/FlutterDash";
+import LogoDevIcon from "@mui/icons-material/LogoDev";
 import Link from "next/link";
 import Container from "@shared/ui/Container";
 
@@ -18,9 +18,9 @@ function Footer() {
         <div className="wrapper flex justify-between items-center">
           <Link
             href="/"
-            className="logo text-primary-400 flex flex-col items-center gap-1 animate-pulse"
+            className="logo text-primary-400 flex flex-col items-center gap-1"
           >
-            <FlutterDashIcon sx={{ width: "40px", height: "40px" }} />
+            <LogoDevIcon sx={{ width: "40px", height: "40px" }} />
 
             <span className="text-xs font-medium uppercase">The Logo</span>
           </Link>
