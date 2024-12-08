@@ -25,7 +25,7 @@ function HeaderDesc() {
     }
   };
   return (
-    <div className="header-desc border-b relative z-50 h-24 flex items-center">
+    <div className="header-desc border-b relative z-10 h-24 flex items-center">
       <Container>
         <div className="flex justify-between items-center">
           <Link

@@ -8,10 +8,14 @@ import ProjectsList from "@widgets/projects/ProjectsList";
 import { useState } from "react";
 
 function ProjectsPage() {
-  const [showAddProject, setShowAddProject] = useState(false);
+  const [showAddProject, setShowAddProject] = useState<boolean>(false);
 
   const handleAddProject = () => {
     setShowAddProject(true);
+  };
+
+  const handleCloseProject = () => {
+    setShowAddProject(false);
   };
 
   return (
@@ -29,7 +33,7 @@ function ProjectsPage() {
             Add Project
           </Button>
 
-          {showAddProject && <AddProject />}
+          {showAddProject && <AddProject onClose={handleCloseProject} />}
         </div>
       </Container>
     </>

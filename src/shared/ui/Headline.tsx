@@ -11,7 +11,7 @@ interface HeadlineProps {
 const textSizes = {
   none: "",
   xs: "text-xs",
-  sm: "text-base",
+  sm: "text-lg",
   md: "text-2xl",
   lg: "text-xl lg:text-5xl",
   xl: "text-3xl md:text-4xl lg:text-6xl",
