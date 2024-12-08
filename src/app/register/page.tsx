@@ -2,62 +2,61 @@ import Button from "@shared/ui/Button";
 import Container from "@shared/ui/Container";
 import Headline from "@shared/ui/Headline";
 import Input from "@shared/ui/input/Input";
-import Link from "next/link";
-
-// interface RegisterFormData {
-//   name: string;
-//   email: string;
-//   password: string;
-//   confirmPassword: string;
-// }
 
 function RegisterPage() {
   return (
-    <section className="registration">
+    <div className="registration flex items-center min-h-screen bg-gradient-to-tr from-primary-300/20 via-[#D8B5FF]/10 to-primary-100/20">
       <Container>
-        <form className="max-w-md mx-auto pt-32 flex flex-col gap-4">
-          <div className="top-title flex flex-col gap-4">
-            <Headline className="text-center">Registration</Headline>
+        <form className="flex flex-col gap-8 text-sm max-w-xl mx-auto border p-16 backdrop-blur-sm bg-white/30 shadow rounded-md">
+          <Headline className="text-gray-800 text-center">Register</Headline>
 
-            <div className="text-center text-sm">
-              <span>If you already registered - </span>
-
-              <Link
-                href="/login"
-                className="text-primary-500 underline underline-offset-4 decoration-dotted"
-              >
-                Authorize
-              </Link>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-4 w-full">
+          <div className="flex flex-col gap-4">
             <Input
-              label="E-mail"
-              className="border"
+              label="Name"
+              type="name"
+              className="border py-3"
+              required
+            />
+
+            <Input
+              label="Email"
+              type="email"
+              className="border py-3"
+              required
             />
 
             <Input
               label="Password"
-              className="border"
+              type="password"
+              className="border py-3"
+              required
             />
 
             <Input
               label="Confirm Password"
-              className="border"
+              type="password"
+              className="border py-3"
+              required
             />
-          </div>
 
-          <Button
-            className="w-full flex items-center justify-center text-center py-3"
-            type="submit"
-            theme="secondary"
-          >
-            Register
-          </Button>
+            <Input
+              label="Company Name"
+              type="text"
+              className="border py-3"
+              required
+            />
+
+            <Button
+              theme="secondary"
+              type="submit"
+              className="text-center flex items-center justify-center font-medium py-3 rounded-md w-full"
+            >
+              Register
+            </Button>
+          </div>
         </form>
       </Container>
-    </section>
+    </div>
   );
 }
 
