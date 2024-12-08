@@ -1,19 +1,39 @@
+"use client";
+
 import Headline from "@shared/ui/Headline";
 import Input from "@shared/ui/input/Input";
 import { cn } from "@shared/utils/cn";
 import ClearIcon from "@mui/icons-material/Clear";
 import Button from "@shared/ui/Button";
+import { useEffect, useRef } from "react";
 
 interface AddProjectProps {
   onClose: () => void;
 }
 
 function AddProject({ onClose }: AddProjectProps) {
+  const modalRef = useRef<HTMLDivElement | null>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
+      onClose();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  });
+
   return (
     <>
       <div className="dark-overlay fixed inset-0 bg-black/30 z-10"></div>
 
       <div
+        ref={modalRef}
         className={cn(
           "add-task flex flex-col gap-4",
           "absolute inset-0 z-20 mx-auto my-auto",
