@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "src/core/providers/AuthProvider";
+import { useAuth } from "src/core/providers/auth/AuthProvider";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
 import Link from "next/link";
 import Container from "@shared/ui/Container";

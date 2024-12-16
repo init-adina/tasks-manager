@@ -2,62 +2,25 @@
 
 import Container from "@shared/ui/Container";
 import Button from "@shared/ui/Button";
-import { useTeams } from "src/core/providers/teams/TeamsClientProvider";
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
-
-// const people = [
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-//   {
-//     imageUrl: "/assets/img/people/me.jpg",
-//     name: "Adina Meiramkhanova",
-//     email: "marhthomson@gmail.com",
-//     position: "junior frontend developer",
-//   },
-// ];
+import { useEffect, useState } from "react";
+import { api } from "@shared/api";
 
 function PeopleItemsWrapper() {
-  const { data: teams } = useTeams();
+  const [teams, setTeams] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await api.get("/team");
+
+        console.log(res.data);
+        setTeams(res.data);
+      } catch (err) {
+        console.log("Error fetching teams", err);
+      }
+    })();
+  }, []);
 
   return (
     <section className="people-items-wrapper">

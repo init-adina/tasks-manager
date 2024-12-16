@@ -1,11 +1,25 @@
 "use client";
 
-import { useProjects } from "src/core/providers/projects/ProjectsClientProvider";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { LinearProgress } from "@mui/material";
+import { useEffect, useState } from "react";
+import { api } from "@shared/api";
 
 function ProjectsList() {
-  const { data: projects } = useProjects();
+  // const { data: projects } = useProjects();
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await api.get("/projects");
+        console.log(res.data);
+        setProjects(res.data);
+      } catch (err) {
+        console.log("Error fetching projeects", err);
+      }
+    })();
+  }, []);
 
   return (
     <section className="projects-list">
@@ -13,7 +27,7 @@ function ProjectsList() {
         {projects.map((project) => (
           <div
             key={project.id}
-            className="project-item cursor-pointer  p-6 shadow-md text-sm border flex flex-col gap-2 rounded-md bg-white"
+            className="project-item cursor-pointer p-6 shadow-md text-sm border flex flex-col gap-2 rounded-md bg-white"
           >
             <div className="start-date-icon flex items-center justify-between">
               <div className="start-date">{project.start_date}</div>

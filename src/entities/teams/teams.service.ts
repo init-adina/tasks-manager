@@ -1,17 +1,14 @@
-import axios from "axios";
 import { TeamItem } from "./teams";
+import { api } from "@shared/api";
 
 class TeamsService {
-  async getTeams(): Promise<TeamItem[]> {
+  async getTeams() {
     try {
-      const res = await axios.get<TeamItem[]>(
-        "http://localhost:8000/api/v1/team"
-      );
+      const res = await api.get<TeamItem[]>("/team");
 
       return res.data;
     } catch (e) {
-      console.log(e);
-      throw new Error("Unresolved to get teams");
+      // console.log(e);
     }
   }
 }

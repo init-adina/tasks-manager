@@ -1,12 +1,4 @@
-import { useAuth } from "src/core/providers/AuthProvider";
-
 function PortfolioInfoBar() {
-  const { user, loading: isLoading } = useAuth();
-
-  if (isLoading) return <div>Loading...</div>;
-
-  if (!user) return <div>Not authorized</div>;
-
   return (
     <div className="portfolio-info-bar border shadow-md rounded-md lg:h-[22rem] p-6 flex flex-col gap-12">
       <div className="top grid grid-cols-1 sm:grid-cols-3 gap-12">

@@ -9,7 +9,7 @@ class TasksService {
       );
       return res.data;
     } catch (e) {
-      console.log(e);
+      // console.log(e);
       throw new Error("Unresolved to get users");
     }
   }

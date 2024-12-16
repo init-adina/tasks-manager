@@ -1,17 +1,16 @@
-import axios from "axios";
+import { AxiosError } from "axios";
 import { ProjectItem } from "./projects";
+import { api } from "@shared/api";
 
 class ProjectsService {
-  async getProjects(): Promise<ProjectItem[]> {
+  async getProjects() {
     try {
-      const res = await axios.get<ProjectItem[]>(
-        "http://localhost:8000/api/v1/projects"
-      );
+      const res = await api.get<ProjectItem[]>("/projects");
 
       return res.data;
     } catch (e) {
-      console.log(e);
-      throw new Error("Unresolved to get projects");
+      if (e instanceof AxiosError) {
+      }
     }
   }
 }

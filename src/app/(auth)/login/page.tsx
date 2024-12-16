@@ -8,14 +8,13 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { LoginFormType, loginSchema } from "src/entities/auth/auth-schemas";
 import { authService } from "src/entities/auth/auth.service";
-import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import { useAuth } from "src/core/providers/AuthProvider";
+import { useAuth } from "src/core/providers/auth/AuthProvider";
 
 function Login() {
   const isLoading = false;
   const router = useRouter();
-  const { refetchUser } = useAuth();
+  const { setUser } = useAuth();
 
   const {
     register,
@@ -27,14 +26,10 @@ function Login() {
   });
 
   const onSubmit = handleSubmit(async (data) => {
-    //TODO Send data to backend within auth service end handle errors
     const res = await authService.login(data);
 
-    if (res?.token) {
-      Cookies.set("token", res.token, { expires: 7 });
-      console.log("Token saved!");
-
-      refetchUser();
+    if (res?.user) {
+      setUser(res.user);
       router.push("/portfolio");
     } else {
       setError("root", {
@@ -42,7 +37,6 @@ function Login() {
         message: "Invalid email or password",
       });
     }
-    console.log(res);
   });
 
   return (

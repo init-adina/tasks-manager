@@ -1,13 +1,6 @@
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
-import { useAuth } from "src/core/providers/AuthProvider";
 
 function PortfolioSidebar() {
-  const { user, loading: isLoading } = useAuth();
-
-  if (isLoading) return <div>Loading...</div>;
-
-  if (!user) return <div>Not authorized</div>;
-
   return (
     <div className="portfolio-sidebar border h-[22rem] p-6 flex flex-col items-center gap-4 rounded-md shadow-md">
       <div className="image size-32">

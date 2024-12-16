@@ -1,6 +1,6 @@
 "use client";
 
-import { useAuth } from "src/core/providers/AuthProvider";
+import { useAuth } from "src/core/providers/auth/AuthProvider";
 import HeaderDesc from "./HeaderDesc";
 
 function Header() {

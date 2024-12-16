@@ -37,6 +37,9 @@ module.exports = {
     "import/no-named-as-default": 0,
     "import/named": 0,
 
+    "no-empty": 0,
+    "@typescript-eslint/no-explicit-any": "off",
+
     "react-refresh/only-export-components": 0,
     "prettier/prettier": "error",
 

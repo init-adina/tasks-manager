@@ -6,7 +6,9 @@ async function ProjectsServerProvider({ children }: { children: ReactNode }) {
   const projects = await projectsService.getProjects();
 
   return (
-    <ProjectsClientProvider data={projects}>{children}</ProjectsClientProvider>
+    <ProjectsClientProvider data={projects ?? []}>
+      {children}
+    </ProjectsClientProvider>
   );
 }
 

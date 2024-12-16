@@ -4,13 +4,13 @@ import Container from "@shared/ui/Container";
 import Input from "@shared/ui/input/Input";
 import SearchIcon from "@mui/icons-material/Search";
 import Link from "next/link";
-import { useAuth } from "src/core/providers/AuthProvider";
+import { useAuth } from "src/core/providers/auth/AuthProvider";
 import { authService } from "src/entities/auth/auth.service";
 import { useRouter } from "next/navigation";
 import LogoDevIcon from "@mui/icons-material/LogoDev";
 
 function HeaderDesc() {
-  const { user, refetchUser } = useAuth();
+  const { user } = useAuth();
 
   const router = useRouter();
 
@@ -18,7 +18,6 @@ function HeaderDesc() {
     try {
       await authService.logout();
 
-      refetchUser(); // Обновить пользователя в контексте
       router.push("/login");
     } catch (error) {
       console.error("Logout failed", error);
