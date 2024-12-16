@@ -3,10 +3,6 @@ import { Inter } from "next/font/google";
 import { ReactNode } from "react";
 import "@shared/scss/main.scss";
 import Header from "@widgets/header/Header";
-import QueryProvider from "src/core/providers/query/QueryProvider";
-import TasksServerProvider from "src/core/providers/tasks/TasksServerProvider";
-import TeamsServerProvider from "src/core/providers/teams/TeamsServerProvider";
-import ProjectsServerProvider from "src/core/providers/projects/ProjectsServerProvider";
 import Toast from "@shared/ui/core/toast/Toast";
 import Footer from "@widgets/footer/Footer";
 import { ServerAuthProvider } from "src/core/providers/auth/ServerAuthProvider";
@@ -25,27 +21,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <QueryProvider>
-        <ServerAuthProvider>
-          <TeamsServerProvider>
-            <ProjectsServerProvider>
-              <TasksServerProvider>
-                <body
-                  suppressHydrationWarning
-                  className={inter.className}
-                >
-                  <Toast />
-                  <div className="min-h-screen">
-                    <Header />
-                    <main>{children}</main>
-                  </div>
-                  <Footer />
-                </body>
-              </TasksServerProvider>
-            </ProjectsServerProvider>
-          </TeamsServerProvider>
-        </ServerAuthProvider>
-      </QueryProvider>
+      <ServerAuthProvider>
+        <body
+          suppressHydrationWarning
+          className={inter.className}
+        >
+          <Toast />
+
+          <div className="min-h-screen">
+            <Header />
+
+            <main>{children}</main>
+          </div>
+
+          <Footer />
+        </body>
+      </ServerAuthProvider>
     </html>
   );
 }

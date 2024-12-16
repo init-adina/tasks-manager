@@ -18,11 +18,12 @@ function HeaderDesc() {
     try {
       await authService.logout();
 
-      router.push("/login");
+      router.replace("/login");
     } catch (error) {
       console.error("Logout failed", error);
     }
   };
+
   return (
     <div className="header-desc border-b relative z-10 h-24 flex items-center">
       <Container>
@@ -41,6 +42,7 @@ function HeaderDesc() {
               className="border-none bg-transparent w-full rounded py-3 px-4"
               placeholder="Search here"
             />
+
             <div className="search-icon py-3 group px-4 cursor-pointer flex items-center justify-center h-full">
               <SearchIcon className="h-full group-hover:text-primary-400 size-6" />
             </div>
