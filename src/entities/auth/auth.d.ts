@@ -1,3 +1,5 @@
+import { Timestamps } from "@shared/api/types";
+
 export interface LoginCredentials {
   email: string;
   password: string;
@@ -8,16 +10,26 @@ export interface LoginResponse {
   token: string;
 }
 
-export interface Position {
+export interface Position extends Timestamps {
   id: number;
   name: string;
   description: string | null;
   slug: string;
-  created_at: string;
-  updated_at: string;
 }
 
-export interface User {
+export interface Project extends Timestamps, Pivot {
+  id: number;
+  name: string;
+  description: string | null;
+  manager_id: number;
+  type: string | null;
+  start_date: string;
+  deadline: string;
+  progress: number;
+  status: string;
+}
+
+export interface User extends Timestamps {
   id: number;
   name: string;
   email: string;
@@ -26,11 +38,10 @@ export interface User {
   email_verified_at: string;
   avatar: string | null;
   gender: string;
+  is_admin: number;
   position_id: number;
   address: string | null;
-  created_at: string;
-  updated_at: string;
   projects_count: number;
   position: Position;
-  projects: any[];
+  projects: Project[];
 }

@@ -4,10 +4,10 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { LinearProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { api } from "@shared/api";
+import { ProjectItem } from "src/entities/projects/projects";
 
 function ProjectsList() {
-  // const { data: projects } = useProjects();
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState<ProjectItem[]>([]);
 
   useEffect(() => {
     (async () => {

@@ -5,9 +5,10 @@ import Button from "@shared/ui/Button";
 import ProgressiveImage from "@shared/ui/core/image/ProgressiveImage";
 import { useEffect, useState } from "react";
 import { api } from "@shared/api";
+import { TeamItem } from "src/entities/teams/teams";
 
 function PeopleItemsWrapper() {
-  const [teams, setTeams] = useState([]);
+  const [teams, setTeams] = useState<TeamItem[]>([]);
 
   useEffect(() => {
     (async () => {
