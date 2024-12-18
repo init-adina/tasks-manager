@@ -15,6 +15,16 @@ export interface ProjectItem extends Timestamps {
   manager: ManagerItem;
 }
 
+export interface AddProjectRequest {
+  name: string;
+  description: string | null;
+  type?: string | null;
+  start_date?: string;
+  deadline: string;
+  progress?: number;
+  status?: string;
+}
+
 interface TaskItem extends Timestamps {
   id: number;
   title: string;

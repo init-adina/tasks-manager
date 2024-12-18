@@ -38,6 +38,10 @@ function Footer() {
               <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>
               </li>
+
+              <li className="hover:text-primary-300">
+                <Link href="/add-project">Add Project</Link>
+              </li>
             </ul>
           </nav>
 

@@ -61,6 +61,10 @@ function HeaderDesc() {
               <li className="hover:text-primary-300">
                 <Link href="/portfolio">Portfolio</Link>
               </li>
+
+              <li className="hover:text-primary-300">
+                <Link href="/add-project">Add</Link>
+              </li>
             </ul>
           </nav>
 
