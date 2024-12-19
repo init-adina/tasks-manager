@@ -1,10 +1,12 @@
 "use client";
 
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { LinearProgress } from "@mui/material";
 import { useEffect, useState } from "react";
 import { api } from "@shared/api";
 import { ProjectItem } from "src/entities/projects/projects";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { projectsService } from "src/entities/projects/projects.service";
 
 function ProjectsList() {
   const [projects, setProjects] = useState<ProjectItem[]>([]);
@@ -21,6 +23,24 @@ function ProjectsList() {
     })();
   }, []);
 
+  const handleDelete = async (projectId: number) => {
+    try {
+      await projectsService.deleteProject(projectId);
+
+      setProjects((prevProjects) =>
+        prevProjects.filter((project) => project.id !== projectId)
+      );
+
+      console.log("Проект успешно удален");
+    } catch (error) {
+      if (error instanceof Error) {
+        console.error("Ошибка при удалении проекта:", error.message);
+      } else {
+        console.error("Unknown error:", error);
+      }
+    }
+  };
+
   return (
     <section className="projects-list">
       <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
@@ -32,7 +52,17 @@ function ProjectsList() {
             <div className="start-date-icon flex items-center justify-between">
               <div className="start-date">{project.start_date}</div>
 
-              <MoreVertIcon sx={{ width: "20px", height: "20px" }} />
+              <div className="icons flex items-center gap-2">
+                <EditIcon
+                  className="hover:text-primary-400"
+                  sx={{ width: "20px", height: "20px" }}
+                />
+                <DeleteIcon
+                  className="hover:text-primary-400"
+                  sx={{ width: "20px", height: "20px" }}
+                  onClick={() => handleDelete(project.id)}
+                />
+              </div>
             </div>
 
             <div className="project-name text-base fkex justify-center text-center capitalize">

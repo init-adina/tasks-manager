@@ -27,6 +27,20 @@ class ProjectsService {
       }
     }
   }
+
+  async deleteProject(projectId: number) {
+    try {
+      const res = await api.delete(`/projects/${projectId}`);
+      return res.data;
+    } catch (e) {
+      if (e instanceof AxiosError) {
+        console.error("Ошибка при удалении проекта:", e.message);
+        throw new Error(
+          e.response?.data?.message || "Не удалось удалить проект"
+        );
+      }
+    }
+  }
 }
 
 export const projectsService = new ProjectsService();
