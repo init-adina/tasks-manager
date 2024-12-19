@@ -4,8 +4,8 @@ import Headline from "@shared/ui/Headline";
 
 function Poster() {
   return (
-    <section className="poster h-screen bg-gradient-to-b from-[#6FD6FF]/15 via-[#D8B5FF]/20 to-white -mt-24">
-      <div className="wrapper h-full pt-12 flex items-center">
+    <section className="poster 2xl:h-screen bg-gradient-to-b from-[#6FD6FF]/15 via-[#D8B5FF]/20 to-white -mt-24">
+      <div className="wrapper h-full pt-40 2xl:pt-24 flex items-center">
         <Container>
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="info py-10 flex flex-col gap-10">

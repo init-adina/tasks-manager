@@ -128,6 +128,12 @@ function ProjectsList() {
 
               <span>{project.manager.name}</span>
             </div>
+
+            <div className="deadline flex items-center justify-between">
+              <span className="font-medium">Deadline</span>
+
+              <span>{project.deadline}</span>
+            </div>
           </div>
         ))}
       </div>

@@ -42,7 +42,7 @@ function Header() {
               <span className="text-xs font-medium uppercase">The Logo</span>
             </Link>
 
-            <div className="search flex border-2 w-[32rem] rounded-lg bg-white items-center">
+            <div className="search xl:flex border-2 hidden xl:w-96 2xl:w-[32rem] rounded-lg bg-white items-center">
               <Input
                 className="border-none bg-transparent w-full rounded py-3 px-4"
                 placeholder="Search here"
