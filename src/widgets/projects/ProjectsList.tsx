@@ -7,9 +7,12 @@ import { ProjectItem } from "src/entities/projects/projects";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { projectsService } from "src/entities/projects/projects.service";
+import EditProject from "./EditProject";
 
 function ProjectsList() {
   const [projects, setProjects] = useState<ProjectItem[]>([]);
+  const [editProjectId, setEditProjectId] = useState<number | null>(null);
+  const [editProject, setEditProject] = useState<ProjectItem | null>(null);
 
   useEffect(() => {
     (async () => {
@@ -41,8 +44,18 @@ function ProjectsList() {
     }
   };
 
+  const handleEdit = (project: ProjectItem) => {
+    setEditProjectId(project.id);
+    setEditProject({ ...project });
+  };
+
+  const handleCancelEdit = () => {
+    setEditProjectId(null);
+    setEditProject(null);
+  };
+
   return (
-    <section className="projects-list">
+    <section className="projects-list relative">
       <div className="grid grid-col-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {projects.map((project) => (
           <div
@@ -56,6 +69,7 @@ function ProjectsList() {
                 <EditIcon
                   className="hover:text-primary-400"
                   sx={{ width: "20px", height: "20px" }}
+                  onClick={() => handleEdit(project)}
                 />
                 <DeleteIcon
                   className="hover:text-primary-400"
@@ -117,6 +131,14 @@ function ProjectsList() {
           </div>
         ))}
       </div>
+
+      {editProjectId && editProject && (
+        <EditProject
+          projectId={editProjectId}
+          initialProjectData={editProject}
+          onCancelEdit={handleCancelEdit}
+        />
+      )}
     </section>
   );
 }

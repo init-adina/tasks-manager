@@ -41,6 +41,20 @@ class ProjectsService {
       }
     }
   }
+
+  async editProject(projectId: number, updatedProject: ProjectItem) {
+    try {
+      const res = await api.put(`/projects/${projectId}`, updatedProject);
+      return res.data;
+    } catch (e) {
+      if (e instanceof AxiosError) {
+        console.error("Error editing project:", e.message);
+        throw new Error(
+          e.response?.data?.message || "Unable to update project"
+        );
+      }
+    }
+  }
 }
 
 export const projectsService = new ProjectsService();
