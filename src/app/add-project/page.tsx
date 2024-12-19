@@ -13,7 +13,12 @@ import {
 import { projectsService } from "src/entities/projects/projects.service";
 
 function AddProject() {
-  const { register, handleSubmit, reset } = useForm<AddProjectType>({
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<AddProjectType>({
     resolver: zodResolver(addingSchema),
   });
 
@@ -21,11 +26,11 @@ function AddProject() {
     try {
       await projectsService.addProject(data);
       console.log(data);
-      alert("Проект успешно добавлен!");
+      // alert("Проект успешно добавлен!");
       reset();
     } catch (error) {
       console.error("Ошибка добавления проекта:", error);
-      alert("Не удалось добавить проект.");
+      // alert("Не удалось добавить проект.");
     }
   });
 
@@ -44,7 +49,9 @@ function AddProject() {
               className="border py-3"
               labelClass="items-start"
               required
+              type="deadline"
               {...register("deadline")}
+              error={errors.deadline?.message}
             />
 
             <Input
@@ -52,6 +59,7 @@ function AddProject() {
               className="border py-3"
               labelClass="items-start"
               {...register("name")}
+              error={errors.name?.message}
             />
 
             <Input
@@ -59,6 +67,7 @@ function AddProject() {
               className="border py-3"
               labelClass="items-start"
               {...register("description")}
+              error={errors.description?.message}
             />
 
             <Button
